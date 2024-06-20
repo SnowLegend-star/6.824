@@ -1,13 +1,19 @@
 package kvsrv
 
-import "6.5840/labrpc"
-import "crypto/rand"
-import "math/big"
+import (
+	"crypto/rand"
+	"fmt"
+	"math/big"
 
+	// "time"
+
+	"6.5840/labrpc"
+)
 
 type Clerk struct {
 	server *labrpc.ClientEnd
 	// You will have to modify this struct.
+	identifier []int64 //每个请求的标识符集合
 }
 
 func nrand() int64 {
@@ -21,6 +27,7 @@ func MakeClerk(server *labrpc.ClientEnd) *Clerk {
 	ck := new(Clerk)
 	ck.server = server
 	// You'll have to add code here.
+	ck.identifier = make([]int64, 0)
 	return ck
 }
 
@@ -37,7 +44,20 @@ func MakeClerk(server *labrpc.ClientEnd) *Clerk {
 func (ck *Clerk) Get(key string) string {
 
 	// You will have to modify this function.
-	return ""
+	args := GetArgs{
+		Key: key,
+	}
+	reply := GetReply{}
+
+	ok := ck.server.Call("KVServer.Get", &args, &reply)
+
+	if ok {
+		// fmt.Println("Get操作成功")
+	} else {
+		fmt.Println("Get操作失败")
+	}
+
+	return reply.Value
 }
 
 // shared by Put and Append.
@@ -50,7 +70,30 @@ func (ck *Clerk) Get(key string) string {
 // arguments. and reply must be passed as a pointer.
 func (ck *Clerk) PutAppend(key string, value string, op string) string {
 	// You will have to modify this function.
-	return ""
+
+	args := PutAppendArgs{
+		Key:   key,
+		Value: value,
+	}
+	reply := PutAppendReply{}
+
+	var ok bool
+	var ret string
+	if op == "Put" { //我是傻逼，这里写个PUT。写牛魔啊啊啊啊
+		ok = ck.server.Call("KVServer.Put", &args, &reply)
+		ret = ""
+	} else {
+		ok = ck.server.Call("KVServer.Append", &args, &reply)
+		ret = reply.Value
+	}
+
+	if ok {
+		// fmt.Println("PutAppend操作成功")
+	} else {
+		fmt.Println("PutAppend操作失败")
+	}
+
+	return ret
 }
 
 func (ck *Clerk) Put(key string, value string) {

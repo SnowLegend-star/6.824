@@ -208,8 +208,8 @@ func TaskRequset() TaskReply { //向master请求任务
 		// return reply.filename_TODO
 	} else {
 		// fmt.Printf("Task request failed!\n")
-		// os.Exit(1)
 		fmt.Println("No more file can be assigned!")
+		// os.Exit(1)
 	}
 
 	return reply

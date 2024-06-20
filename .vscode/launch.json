@@ -7,17 +7,20 @@
         {
             "debugAdapter": "dlv-dap",
             // "name": "mrcoordinator",
-            "name": "mrworker",
+            // "name": "mrworker",
+            "name": "test_test",
             "type": "go",
             "request": "launch",
             "mode": "auto",
             // "program": "${workspaceFolder}/src/main/mrcoordinator.go",
-            "program": "${workspaceFolder}/src/main/mrworker.go",
+            // "program": "${workspaceFolder}/src/main/mrworker.go",
+            "program": "${workspaceFolder}/src/kvsrv/test_test.go",
             "args": [
                 // "wc.so",
                 // "pg-grimm.txt",
                 // "pg-frankenstein.txt"
-                "wc.so"
+
+                // "wc.so"
             ],
             "buildFlags": "-race"
         }
