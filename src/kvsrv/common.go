@@ -23,3 +23,10 @@ type GetArgs struct {
 type GetReply struct {
 	Value string
 }
+
+type TaskCompleteArgs struct {
+	Identifier int64
+}
+
+type TaskCompleteReply struct { //Server要不要回复这条消息都可以
+}

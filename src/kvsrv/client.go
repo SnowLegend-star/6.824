@@ -2,10 +2,7 @@ package kvsrv
 
 import (
 	"crypto/rand"
-	"fmt"
 	"math/big"
-
-	// "time"
 
 	"6.5840/labrpc"
 )
@@ -44,17 +41,30 @@ func MakeClerk(server *labrpc.ClientEnd) *Clerk {
 func (ck *Clerk) Get(key string) string {
 
 	// You will have to modify this function.
+	id := nrand()
 	args := GetArgs{
-		Key: key,
+		Key:        key,
+		Identifier: id,
 	}
 	reply := GetReply{}
 
 	ok := ck.server.Call("KVServer.Get", &args, &reply)
 
-	if ok {
-		// fmt.Println("Get操作成功")
-	} else {
-		fmt.Println("Get操作失败")
+	for ok == false {
+		// fmt.Println("Get操作失败,自动重试")
+		ok = ck.server.Call("KVServer.Get", &args, &reply)
+
+	}
+
+	argsTaskComplete := TaskCompleteArgs{
+		Identifier: id,
+	}
+	replyTaskComplete := TaskCompleteReply{}
+	ok = ck.server.Call("KVServer.TaskComplete_Handeler", &argsTaskComplete, &replyTaskComplete)
+
+	for ok == false {
+		// fmt.Println("Server没有收到Get操作完成的通知")
+		ok = ck.server.Call("KVServer.TaskComplete_Handeler", &argsTaskComplete, &replyTaskComplete)
 	}
 
 	return reply.Value
@@ -70,27 +80,33 @@ func (ck *Clerk) Get(key string) string {
 // arguments. and reply must be passed as a pointer.
 func (ck *Clerk) PutAppend(key string, value string, op string) string {
 	// You will have to modify this function.
-
+	id := nrand()
 	args := PutAppendArgs{
-		Key:   key,
-		Value: value,
+		Key:        key,
+		Value:      value,
+		Identifier: id,
 	}
 	reply := PutAppendReply{}
 
-	var ok bool
-	var ret string
-	if op == "Put" { //我是傻逼，这里写个PUT。写牛魔啊啊啊啊
-		ok = ck.server.Call("KVServer.Put", &args, &reply)
-		ret = ""
-	} else {
-		ok = ck.server.Call("KVServer.Append", &args, &reply)
-		ret = reply.Value
-	}
+	ret := ""
+	ok := ck.server.Call("KVServer."+op, &args, &reply)
 
-	if ok {
-		// fmt.Println("PutAppend操作成功")
-	} else {
-		fmt.Println("PutAppend操作失败")
+	for ok == false {
+		// fmt.Printf("%v操作失败\n", op)
+		ok = ck.server.Call("KVServer."+op, &args, &reply)
+
+	}
+	ret = reply.Value
+
+	argsTaskComplete := TaskCompleteArgs{
+		Identifier: id,
+	}
+	replyTaskComplete := TaskCompleteReply{}
+	ok = ck.server.Call("KVServer.TaskComplete_Handeler", &argsTaskComplete, &replyTaskComplete)
+
+	for ok == false {
+		// fmt.Println("Server没有收到PutAppend操作完成的通知")
+		ok = ck.server.Call("KVServer.TaskComplete_Handeler", &argsTaskComplete, &replyTaskComplete)
 	}
 
 	return ret
