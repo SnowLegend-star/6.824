@@ -53,7 +53,6 @@ func (ck *Clerk) Get(key string) string {
 	for ok == false {
 		// fmt.Println("Get操作失败,自动重试")
 		ok = ck.server.Call("KVServer.Get", &args, &reply)
-
 	}
 
 	argsTaskComplete := TaskCompleteArgs{
@@ -94,7 +93,6 @@ func (ck *Clerk) PutAppend(key string, value string, op string) string {
 	for ok == false {
 		// fmt.Printf("%v操作失败\n", op)
 		ok = ck.server.Call("KVServer."+op, &args, &reply)
-
 	}
 	ret = reply.Value
 

@@ -37,17 +37,6 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 
 	//只有未完成的操作才可以被执行
 	reply.Value = kv.kvStorage[args.Key]
-	// if kv.opComplete[args.Identifier] == 0 {
-	// 	kv.opComplete[args.Identifier] = 1
-	// 	reply.Value = kv.kvStorage[args.Key]
-	// } else {
-	// 	reply.Value = kv.kvStorage[args.Key]
-	// }
-
-	// DPrintf("Get: Key=%s, Value=%s\n", args.Key, reply.Value)
-	// if reply.Value == "" {
-	// 	fmt.Println("Value是空字符串")
-	// }
 
 }
 
@@ -55,7 +44,7 @@ func (kv *KVServer) Put(args *PutAppendArgs, reply *PutAppendReply) { //Put方�
 	// Your code here.
 	kv.mu.Lock()
 	defer kv.mu.Unlock()
-	// DPrintf("Get: Key=%s, Value=%s\n", args.Key, args.Value)
+
 	if kv.opComplete[args.Identifier] == 0 {
 		kv.opComplete[args.Identifier] = 1
 		kv.kvStorage[args.Key] = args.Value
@@ -67,15 +56,14 @@ func (kv *KVServer) Append(args *PutAppendArgs, reply *PutAppendReply) {
 	// Your code here.
 	kv.mu.Lock()
 	defer kv.mu.Unlock()
-	// DPrintf("Get: Key=%s, Value=%s\n", args.Key, args.Value)
 
 	if kv.opComplete[args.Identifier] == 0 {
 		kv.opComplete[args.Identifier] = 1
 		oldValue := kv.kvStorage[args.Key]
 		kv.kvStorage[args.Key] = oldValue + args.Value
-		// kv.kvStorage[args.Key] = args.Value + oldValue	//这里追加方式颠倒了，应该oldValue在前面
 		reply.Value = oldValue
-		kv.opReply[args.Identifier] = oldValue
+
+		kv.opReply[args.Identifier] = oldValue //保存这个operation处理的结果
 	} else {
 		reply.Value = kv.opReply[args.Identifier]
 	}
