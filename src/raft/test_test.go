@@ -73,6 +73,17 @@ func TestReElection3A(t *testing.T) {
 	Debug(dInfo, "原来的Leader1: %v加入连接", leader1)
 	leader2 := cfg.checkOneLeader()
 
+	//加入旧的Leader后，查看集群中有几个Leader
+	leaders := make(map[int][]int)
+	for i := 0; i < cfg.n; i++ {
+		if cfg.connected[i] {
+			if term, leader := cfg.rafts[i].GetState(); leader {
+				leaders[term] = append(leaders[term], i)
+				Debug(dLeader, "当前集群中的leader:%v ,term=%v", i, term)
+			}
+		}
+	}
+
 	// if there's no quorum, no new leader should
 	// be elected.
 	cfg.disconnect(leader2)
@@ -80,6 +91,15 @@ func TestReElection3A(t *testing.T) {
 	cfg.disconnect((leader2 + 1) % servers)
 	Debug(dInfo, "断开Server %v的连接", (leader2+1)%servers)
 	time.Sleep(2 * RaftElectionTimeout)
+
+	for i := 0; i < cfg.n; i++ {
+		if cfg.connected[i] {
+			if term, leader := cfg.rafts[i].GetState(); leader {
+				leaders[term] = append(leaders[term], i)
+				Debug(dLeader, "当前集群中的leader:%v ,term=%v", i, term)
+			}
+		}
+	}
 
 	// check that the one connected server
 	// does not think it is the leader.

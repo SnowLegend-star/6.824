@@ -1,0 +1,1159 @@
+Test (3A): initial election ...
+005883 INFO 距离上一次收到Leader的消息过去了:9223372036854 ms
+005883 INFO Follower 1准备发起选举
+005884 Candidate Candidate 1准备发起选举,Term=1
+005886 VOTE Candidate 1, Term= 1收到了来自Server 2,Term=1的投票,结果是true
+005886 LEAD 1成为了Leader,term=1
+005887 VOTE Candidate 1, Term= 1持有2票
+005887 Heartbeat Leader=1, Term=1 -> Server=2
+005886 VOTE Candidate 1, Term= 1收到了来自Server 0,Term=1的投票,结果是true
+005888 LEAD 1成为了Leader,term=1
+005888 VOTE Candidate 1, Term= 1持有3票
+005888 Heartbeat Leader=1, Term=1 -> Server=2
+005888 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+005888 Heartbeat Leader=1, Term=1 -> Server=0
+005888 Heartbeat Leader=1, Term=1 -> Server=0
+005889 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+005889 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+005890 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+006036 Heartbeat Leader=1, Term=1 -> Server=2
+006037 Heartbeat Leader=1, Term=1 -> Server=0
+006038 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+006038 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+007046 Heartbeat Leader=1, Term=1 -> Server=2
+007047 Heartbeat Leader=1, Term=1 -> Server=0
+007050 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+007051 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+008047 Heartbeat Leader=1, Term=1 -> Server=2
+008048 Heartbeat Leader=1, Term=1 -> Server=0
+008049 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+008050 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+009059 Heartbeat Leader=1, Term=1 -> Server=2
+009060 Heartbeat Leader=1, Term=1 -> Server=0
+009062 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+009062 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+010060 Heartbeat Leader=1, Term=1 -> Server=2
+010060 Heartbeat Leader=1, Term=1 -> Server=0
+010063 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+010063 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+011064 Heartbeat Leader=1, Term=1 -> Server=2
+011065 Heartbeat Leader=1, Term=1 -> Server=0
+011066 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+011066 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+012066 Heartbeat Leader=1, Term=1 -> Server=2
+012066 Heartbeat Leader=1, Term=1 -> Server=0
+012068 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+012069 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+013072 Heartbeat Leader=1, Term=1 -> Server=2
+013073 Heartbeat Leader=1, Term=1 -> Server=0
+013074 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+013074 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+014079 Heartbeat Leader=1, Term=1 -> Server=2
+014080 Heartbeat Leader=1, Term=1 -> Server=0
+014081 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+014081 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+015087 Heartbeat Leader=1, Term=1 -> Server=2
+015088 Heartbeat Leader=1, Term=1 -> Server=0
+015089 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+015089 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+016096 Heartbeat Leader=1, Term=1 -> Server=2
+016096 Heartbeat Leader=1, Term=1 -> Server=0
+016098 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+016098 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+017101 Heartbeat Leader=1, Term=1 -> Server=2
+017102 Heartbeat Leader=1, Term=1 -> Server=0
+017103 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+017104 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+018107 Heartbeat Leader=1, Term=1 -> Server=2
+018107 Heartbeat Leader=1, Term=1 -> Server=0
+018110 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+018112 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+019112 Heartbeat Leader=1, Term=1 -> Server=2
+019112 Heartbeat Leader=1, Term=1 -> Server=0
+019115 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+019117 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+020118 Heartbeat Leader=1, Term=1 -> Server=2
+020118 Heartbeat Leader=1, Term=1 -> Server=0
+020120 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+020121 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+021126 Heartbeat Leader=1, Term=1 -> Server=2
+021126 Heartbeat Leader=1, Term=1 -> Server=0
+021128 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+021130 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+022128 Heartbeat Leader=1, Term=1 -> Server=2
+022129 Heartbeat Leader=1, Term=1 -> Server=0
+022130 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+022130 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+023135 Heartbeat Leader=1, Term=1 -> Server=2
+023136 Heartbeat Leader=1, Term=1 -> Server=0
+023137 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+023137 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+024144 Heartbeat Leader=1, Term=1 -> Server=2
+024145 Heartbeat Leader=1, Term=1 -> Server=0
+024147 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+024147 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+025150 Heartbeat Leader=1, Term=1 -> Server=2
+025151 Heartbeat Leader=1, Term=1 -> Server=0
+025152 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+025152 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+026155 Heartbeat Leader=1, Term=1 -> Server=2
+026157 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+026155 Heartbeat Leader=1, Term=1 -> Server=0
+026158 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+027160 Heartbeat Leader=1, Term=1 -> Server=2
+027160 Heartbeat Leader=1, Term=1 -> Server=0
+027161 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+027162 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+028163 Heartbeat Leader=1, Term=1 -> Server=2
+028164 Heartbeat Leader=1, Term=1 -> Server=0
+028165 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+028166 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+029167 Heartbeat Leader=1, Term=1 -> Server=2
+029168 Heartbeat Leader=1, Term=1 -> Server=0
+029169 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+029169 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+030167 Heartbeat Leader=1, Term=1 -> Server=2
+030168 Heartbeat Leader=1, Term=1 -> Server=0
+030171 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+030170 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+031173 Heartbeat Leader=1, Term=1 -> Server=2
+031176 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+031176 Heartbeat Leader=1, Term=1 -> Server=0
+031178 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+032176 Heartbeat Leader=1, Term=1 -> Server=2
+032177 Heartbeat Leader=1, Term=1 -> Server=0
+032178 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+032179 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+033183 Heartbeat Leader=1, Term=1 -> Server=2
+033184 Heartbeat Leader=1, Term=1 -> Server=0
+033185 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+033185 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+034195 Heartbeat Leader=1, Term=1 -> Server=2
+034195 Heartbeat Leader=1, Term=1 -> Server=0
+034196 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+034197 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+  ... Passed --   3.5  3   64   12940    0
+Test (3A): election after network failure ...
+040254 INFO 距离上一次收到Leader的消息过去了:9223372036854 ms
+040255 INFO Follower 1准备发起选举
+040255 Candidate Candidate 1准备发起选举,Term=1
+040257 VOTE Candidate 1, Term= 1收到了来自Server 2,Term=1的投票,结果是true
+040257 LEAD 1成为了Leader,term=1
+040257 VOTE Candidate 1, Term= 1持有2票
+040257 Heartbeat Leader=1, Term=1 -> Server=2
+040257 VOTE Candidate 1, Term= 1收到了来自Server 0,Term=1的投票,结果是true
+040257 LEAD 1成为了Leader,term=1
+040257 VOTE Candidate 1, Term= 1持有3票
+040257 Heartbeat Leader=1, Term=1 -> Server=0
+040258 Heartbeat Leader=1, Term=1 -> Server=2
+040258 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+040258 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+040259 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+040258 Heartbeat Leader=1, Term=1 -> Server=0
+040260 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+041047 Heartbeat Leader=1, Term=1 -> Server=2
+041048 Heartbeat Leader=1, Term=1 -> Server=0
+041049 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+041049 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+042047 Heartbeat Leader=1, Term=1 -> Server=2
+042048 Heartbeat Leader=1, Term=1 -> Server=0
+042050 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+042050 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+043054 Heartbeat Leader=1, Term=1 -> Server=2
+043055 Heartbeat Leader=1, Term=1 -> Server=0
+043056 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+043056 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+044060 Heartbeat Leader=1, Term=1 -> Server=2
+044061 Heartbeat Leader=1, Term=1 -> Server=0
+044062 Heartbeat Follower 2 收到来自Leader=1,Term=1的Heartbeat
+044062 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+044224 INFO 断开Leader1: 1的连接
+045069 Heartbeat Leader=1, Term=1 -> Server=2
+045070 Heartbeat Leader=1, Term=1 -> Server=0
+046075 Heartbeat Leader=1, Term=1 -> Server=2
+046076 Heartbeat Leader=1, Term=1 -> Server=0
+047086 Heartbeat Leader=1, Term=1 -> Server=2
+047086 Heartbeat Leader=1, Term=1 -> Server=0
+048091 Heartbeat Leader=1, Term=1 -> Server=2
+048092 Heartbeat Leader=1, Term=1 -> Server=0
+049097 Heartbeat Leader=1, Term=1 -> Server=2
+049098 Heartbeat Leader=1, Term=1 -> Server=0
+050105 Heartbeat Leader=1, Term=1 -> Server=2
+050106 Heartbeat Leader=1, Term=1 -> Server=0
+051110 Heartbeat Leader=1, Term=1 -> Server=2
+051111 Heartbeat Leader=1, Term=1 -> Server=0
+052118 Heartbeat Leader=1, Term=1 -> Server=2
+052118 Heartbeat Leader=1, Term=1 -> Server=0
+053127 Heartbeat Leader=1, Term=1 -> Server=2
+053128 Heartbeat Leader=1, Term=1 -> Server=0
+054130 Heartbeat Leader=1, Term=1 -> Server=2
+054131 Heartbeat Leader=1, Term=1 -> Server=0
+055139 Heartbeat Leader=1, Term=1 -> Server=2
+055139 Heartbeat Leader=1, Term=1 -> Server=0
+055163 INFO 距离上一次收到Leader的消息过去了:1110 ms
+055164 INFO Follower 2准备发起选举
+055164 Candidate Candidate 2准备发起选举,Term=2
+055172 VOTE Candidate 2, Term= 2收到了来自Server 0,Term=2的投票,结果是true
+055172 LEAD 2成为了Leader,term=2
+055173 VOTE Candidate 2, Term= 2持有2票
+055173 Heartbeat Leader=2, Term=2 -> Server=1
+055173 Heartbeat Leader=2, Term=2 -> Server=0
+055174 Heartbeat Follower 0 收到来自Leader=2,Term=2的Heartbeat
+056143 Heartbeat Leader=2, Term=2 -> Server=1
+056143 Heartbeat Leader=1, Term=1 -> Server=2
+056144 Heartbeat Leader=2, Term=2 -> Server=0
+056144 Heartbeat Leader=1, Term=1 -> Server=0
+056145 Heartbeat Follower 0 收到来自Leader=2,Term=2的Heartbeat
+057144 Heartbeat Leader=2, Term=2 -> Server=1
+057144 Heartbeat Leader=2, Term=2 -> Server=0
+057145 Heartbeat Leader=1, Term=1 -> Server=2
+057145 Heartbeat Leader=1, Term=1 -> Server=0
+057146 Heartbeat Follower 0 收到来自Leader=2,Term=2的Heartbeat
+058149 Heartbeat Leader=2, Term=2 -> Server=1
+058150 Heartbeat Leader=2, Term=2 -> Server=0
+058150 Heartbeat Leader=1, Term=1 -> Server=2
+058150 Heartbeat Leader=1, Term=1 -> Server=0
+058151 Heartbeat Follower 0 收到来自Leader=2,Term=2的Heartbeat
+058827 INFO 原来的Leader1: 1加入连接
+059153 Heartbeat Leader=2, Term=2 -> Server=1
+059153 Heartbeat Leader=1, Term=1 -> Server=2
+059153 Heartbeat Leader=2, Term=2 -> Server=0
+059155 Heartbeat Leader 1 收到来自Leader=2,Term=2的Heartbeat
+059155 Heartbeat Leader 2 收到来自Leader=1,Term=1的Heartbeat
+059153 Heartbeat Leader=1, Term=1 -> Server=0
+059156 Heartbeat Follower 0 收到来自Leader=2,Term=2的Heartbeat
+059157 Heartbeat Follower 0 收到来自Leader=1,Term=1的Heartbeat
+069310 INFO 距离上一次收到Leader的消息过去了:1015 ms
+069311 INFO Follower 0准备发起选举
+069311 Candidate Candidate 0准备发起选举,Term=3
+069313 VOTE Candidate 0, Term= 3收到了来自Server 2,Term=3的投票,结果是true
+069314 LEAD 0成为了Leader,term=3
+069314 VOTE Candidate 0, Term= 3持有2票
+069314 Heartbeat Leader=0, Term=3 -> Server=2
+069315 Heartbeat Follower 2 收到来自Leader=0,Term=3的Heartbeat
+069314 VOTE Candidate 0, Term= 3收到了来自Server 1,Term=3的投票,结果是true
+069315 LEAD 0成为了Leader,term=3
+069315 VOTE Candidate 0, Term= 3持有3票
+069315 Heartbeat Leader=0, Term=3 -> Server=2
+069315 Heartbeat Leader=0, Term=3 -> Server=1
+069316 Heartbeat Follower 1 收到来自Leader=0,Term=3的Heartbeat
+069316 Heartbeat Follower 2 收到来自Leader=0,Term=3的Heartbeat
+069316 Heartbeat Leader=0, Term=3 -> Server=1
+069319 Heartbeat Follower 1 收到来自Leader=0,Term=3的Heartbeat
+070215 Heartbeat Leader=0, Term=3 -> Server=2
+070216 Heartbeat Leader=0, Term=3 -> Server=1
+070218 Heartbeat Follower 1 收到来自Leader=0,Term=3的Heartbeat
+070218 Heartbeat Follower 2 收到来自Leader=0,Term=3的Heartbeat
+071221 Heartbeat Leader=0, Term=3 -> Server=2
+071222 Heartbeat Leader=0, Term=3 -> Server=1
+071224 Heartbeat Follower 2 收到来自Leader=0,Term=3的Heartbeat
+071225 Heartbeat Follower 1 收到来自Leader=0,Term=3的Heartbeat
+072226 Heartbeat Leader=0, Term=3 -> Server=2
+072227 Heartbeat Follower 2 收到来自Leader=0,Term=3的Heartbeat
+072226 Heartbeat Leader=0, Term=3 -> Server=1
+072228 Heartbeat Follower 1 收到来自Leader=0,Term=3的Heartbeat
+073229 Heartbeat Leader=0, Term=3 -> Server=2
+073229 Heartbeat Leader=0, Term=3 -> Server=1
+073230 Heartbeat Follower 1 收到来自Leader=0,Term=3的Heartbeat
+073230 Heartbeat Follower 2 收到来自Leader=0,Term=3的Heartbeat
+073898 LEAD 当前集群中的leader:0 ,term=3
+073898 INFO 断开Leader2: 0的连接
+073898 INFO 断开Server 1的连接
+074233 Heartbeat Leader=0, Term=3 -> Server=2
+074234 Heartbeat Leader=0, Term=3 -> Server=1
+075236 Heartbeat Leader=0, Term=3 -> Server=2
+075237 Heartbeat Leader=0, Term=3 -> Server=1
+076245 Heartbeat Leader=0, Term=3 -> Server=2
+076246 Heartbeat Leader=0, Term=3 -> Server=1
+077249 Heartbeat Leader=0, Term=3 -> Server=2
+077249 Heartbeat Leader=0, Term=3 -> Server=1
+078249 Heartbeat Leader=0, Term=3 -> Server=2
+078250 Heartbeat Leader=0, Term=3 -> Server=1
+079253 Heartbeat Leader=0, Term=3 -> Server=2
+079254 Heartbeat Leader=0, Term=3 -> Server=1
+080261 Heartbeat Leader=0, Term=3 -> Server=2
+080262 Heartbeat Leader=0, Term=3 -> Server=1
+081269 Heartbeat Leader=0, Term=3 -> Server=2
+081270 Heartbeat Leader=0, Term=3 -> Server=1
+082273 Heartbeat Leader=0, Term=3 -> Server=2
+082273 Heartbeat Leader=0, Term=3 -> Server=1
+082589 INFO 距离上一次收到Leader的消息过去了:935 ms
+082589 INFO Follower 1准备发起选举
+082589 Candidate Candidate 1准备发起选举,Term=4
+083274 Heartbeat Leader=0, Term=3 -> Server=2
+083274 Heartbeat Leader=0, Term=3 -> Server=1
+084285 Heartbeat Leader=0, Term=3 -> Server=2
+084286 Heartbeat Leader=0, Term=3 -> Server=1
+085290 Heartbeat Leader=0, Term=3 -> Server=2
+085290 Heartbeat Leader=0, Term=3 -> Server=1
+086106 VOTE Candidate 1, Term= 4向Server 0请求投票failed
+086299 Heartbeat Leader=0, Term=3 -> Server=2
+086299 Heartbeat Leader=0, Term=3 -> Server=1
+087307 Heartbeat Leader=0, Term=3 -> Server=2
+087308 Heartbeat Leader=0, Term=3 -> Server=1
+088007 INFO 距离上一次收到Leader的消息过去了:1477 ms
+088007 INFO Follower 2准备发起选举
+088008 Candidate Candidate 2准备发起选举,Term=4
+088319 Heartbeat Leader=0, Term=3 -> Server=2
+088320 Heartbeat Leader=0, Term=3 -> Server=1
+089322 Heartbeat Leader=0, Term=3 -> Server=2
+089322 Heartbeat Leader=0, Term=3 -> Server=1
+090250 INFO 距离上一次收到Leader的消息过去了:766 ms
+090251 INFO Follower 1准备发起选举
+090251 Candidate Candidate 1准备发起选举,Term=5
+090333 Heartbeat Leader=0, Term=3 -> Server=2
+090334 Heartbeat Leader=0, Term=3 -> Server=1
+091335 Heartbeat Leader=0, Term=3 -> Server=2
+091335 Heartbeat Leader=0, Term=3 -> Server=1
+092336 Heartbeat Leader=0, Term=3 -> Server=2
+092336 Heartbeat Leader=0, Term=3 -> Server=1
+093185 VOTE Candidate 2, Term= 4向Server 1请求投票failed
+093346 Heartbeat Leader=0, Term=3 -> Server=2
+093347 Heartbeat Leader=0, Term=3 -> Server=1
+093909 INFO Server 0已经断开连接
+093909 INFO Server 1已经断开连接
+093909 INFO Server 2还处于链接状态
+093909 INFO Server 2已经断开连接
+094349 Heartbeat Leader=0, Term=3 -> Server=2
+094350 INFO 距离上一次收到Leader的消息过去了:634 ms
+094350 INFO Follower 2准备发起选举
+094350 Candidate Candidate 2准备发起选举,Term=5
+094350 Heartbeat Leader=0, Term=3 -> Server=1
+094352 VOTE Candidate 2, Term= 5收到了来自Server 1,Term=5的投票,结果是false
+095361 Heartbeat Leader=0, Term=3 -> Server=2
+095361 Heartbeat Leader=0, Term=3 -> Server=1
+095405 INFO 距离上一次收到Leader的消息过去了:515 ms
+095405 INFO Follower 1准备发起选举
+095405 Candidate Candidate 1准备发起选举,Term=6
+095407 VOTE Candidate 1, Term= 6收到了来自Server 2,Term=6的投票,结果是true
+095407 LEAD 1成为了Leader,term=6
+095407 VOTE Candidate 1, Term= 6持有2票
+095407 Heartbeat Leader=1, Term=6 -> Server=2
+095408 Heartbeat Leader=1, Term=6 -> Server=0
+095408 Heartbeat Candidate 2 收到来自Leader=1,Term=6的Heartbeat
+096341 Heartbeat Leader=1, Term=6 -> Server=2
+096342 Heartbeat Leader=1, Term=6 -> Server=0
+096344 Heartbeat Follower 2 收到来自Leader=1,Term=6的Heartbeat
+096367 Heartbeat Leader=0, Term=3 -> Server=2
+096367 Heartbeat Leader=0, Term=3 -> Server=1
+097344 Heartbeat Leader=1, Term=6 -> Server=2
+097345 Heartbeat Leader=1, Term=6 -> Server=0
+097346 Heartbeat Follower 2 收到来自Leader=1,Term=6的Heartbeat
+097378 Heartbeat Leader=0, Term=3 -> Server=2
+097379 Heartbeat Leader=0, Term=3 -> Server=1
+098350 Heartbeat Leader=1, Term=6 -> Server=2
+098352 Heartbeat Follower 2 收到来自Leader=1,Term=6的Heartbeat
+098350 Heartbeat Leader=1, Term=6 -> Server=0
+098384 Heartbeat Leader=0, Term=3 -> Server=2
+098385 Heartbeat Leader=0, Term=3 -> Server=1
+099358 Heartbeat Leader=1, Term=6 -> Server=2
+099358 Heartbeat Leader=1, Term=6 -> Server=0
+099359 Heartbeat Follower 2 收到来自Leader=1,Term=6的Heartbeat
+099360 Heartbeat Leader 0 收到来自Leader=1,Term=6的Heartbeat
+100361 Heartbeat Leader=1, Term=6 -> Server=2
+100362 Heartbeat Leader=1, Term=6 -> Server=0
+100364 Heartbeat Follower 0 收到来自Leader=1,Term=6的Heartbeat
+100364 Heartbeat Follower 2 收到来自Leader=1,Term=6的Heartbeat
+101366 Heartbeat Leader=1, Term=6 -> Server=2
+101367 Heartbeat Leader=1, Term=6 -> Server=0
+101369 Heartbeat Follower 2 收到来自Leader=1,Term=6的Heartbeat
+101369 Heartbeat Follower 0 收到来自Leader=1,Term=6的Heartbeat
+102370 Heartbeat Leader=1, Term=6 -> Server=2
+102371 Heartbeat Leader=1, Term=6 -> Server=0
+102372 Heartbeat Follower 2 收到来自Leader=1,Term=6的Heartbeat
+102373 Heartbeat Follower 0 收到来自Leader=1,Term=6的Heartbeat
+  ... Passed --   6.8  3  146   22592    0
+Test (3A): multiple elections ...
+105354 VOTE Candidate 1, Term= 6向Server 0请求投票failed
+109081 INFO 距离上一次收到Leader的消息过去了:9223372036854 ms
+109082 INFO Follower 6准备发起选举
+109082 Candidate Candidate 6准备发起选举,Term=1
+109085 VOTE Candidate 6, Term= 1收到了来自Server 5,Term=1的投票,结果是true
+109086 VOTE Candidate 6, Term= 1持有2票
+109086 VOTE Candidate 6, Term= 1收到了来自Server 2,Term=1的投票,结果是true
+109086 VOTE Candidate 6, Term= 1持有3票
+109086 VOTE Candidate 6, Term= 1收到了来自Server 3,Term=1的投票,结果是true
+109086 VOTE Candidate 6, Term= 1收到了来自Server 4,Term=1的投票,结果是true
+109086 LEAD 6成为了Leader,term=1
+109087 VOTE Candidate 6, Term= 1持有4票
+109087 LEAD 6成为了Leader,term=1
+109087 VOTE Candidate 6, Term= 1持有5票
+109087 Heartbeat Leader=6, Term=1 -> Server=5
+109087 VOTE Candidate 6, Term= 1收到了来自Server 0,Term=1的投票,结果是true
+109088 LEAD 6成为了Leader,term=1
+109088 Heartbeat Leader=6, Term=1 -> Server=0
+109088 VOTE Candidate 6, Term= 1收到了来自Server 1,Term=1的投票,结果是true
+109088 Heartbeat Leader=6, Term=1 -> Server=5
+109088 Heartbeat Leader=6, Term=1 -> Server=1
+109088 VOTE Candidate 6, Term= 1持有6票
+109089 Heartbeat Leader=6, Term=1 -> Server=0
+109089 Heartbeat Leader=6, Term=1 -> Server=1
+109090 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+109091 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+109091 Heartbeat Leader=6, Term=1 -> Server=2
+109091 Heartbeat Leader=6, Term=1 -> Server=4
+109091 Heartbeat Leader=6, Term=1 -> Server=2
+109089 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+109091 Heartbeat Leader=6, Term=1 -> Server=2
+109092 Heartbeat Leader=6, Term=1 -> Server=3
+109092 Heartbeat Follower 4 收到来自Leader=6,Term=1的Heartbeat
+109092 Heartbeat Follower 2 收到来自Leader=6,Term=1的Heartbeat
+109089 LEAD 6成为了Leader,term=1
+109092 VOTE Candidate 6, Term= 1持有7票
+109092 Heartbeat Follower 2 收到来自Leader=6,Term=1的Heartbeat
+109092 Heartbeat Leader=6, Term=1 -> Server=3
+109093 Heartbeat Follower 3 收到来自Leader=6,Term=1的Heartbeat
+109093 Heartbeat Follower 2 收到来自Leader=6,Term=1的Heartbeat
+109093 Heartbeat Leader=6, Term=1 -> Server=3
+109088 Heartbeat Leader=6, Term=1 -> Server=5
+109093 Heartbeat Follower 3 收到来自Leader=6,Term=1的Heartbeat
+109094 Heartbeat Follower 3 收到来自Leader=6,Term=1的Heartbeat
+109094 Heartbeat Leader=6, Term=1 -> Server=4
+109094 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+109094 Heartbeat Leader=6, Term=1 -> Server=4
+109088 Heartbeat Leader=6, Term=1 -> Server=0
+109094 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+109095 Heartbeat Leader=6, Term=1 -> Server=0
+109095 Heartbeat Follower 4 收到来自Leader=6,Term=1的Heartbeat
+109092 Heartbeat Leader=6, Term=1 -> Server=5
+109095 Heartbeat Leader=6, Term=1 -> Server=2
+109095 Heartbeat Leader=6, Term=1 -> Server=1
+109095 Heartbeat Leader=6, Term=1 -> Server=3
+109090 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+109096 Heartbeat Leader=6, Term=1 -> Server=4
+109096 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+109091 Heartbeat Leader=6, Term=1 -> Server=1
+109096 Heartbeat Follower 4 收到来自Leader=6,Term=1的Heartbeat
+109101 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+109102 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+109101 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+109103 Heartbeat Follower 2 收到来自Leader=6,Term=1的Heartbeat
+109104 Heartbeat Follower 3 收到来自Leader=6,Term=1的Heartbeat
+109109 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+109110 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+109108 Heartbeat Follower 4 收到来自Leader=6,Term=1的Heartbeat
+109290 Heartbeat Leader=6, Term=1 -> Server=5
+109291 Heartbeat Leader=6, Term=1 -> Server=4
+109292 Heartbeat Follower 4 收到来自Leader=6,Term=1的Heartbeat
+109290 Heartbeat Leader=6, Term=1 -> Server=2
+109290 Heartbeat Leader=6, Term=1 -> Server=0
+109290 Heartbeat Leader=6, Term=1 -> Server=1
+109295 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+109291 Heartbeat Leader=6, Term=1 -> Server=3
+109292 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+109296 Heartbeat Follower 3 收到来自Leader=6,Term=1的Heartbeat
+109293 Heartbeat Follower 2 收到来自Leader=6,Term=1的Heartbeat
+109294 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+110294 Heartbeat Leader=6, Term=1 -> Server=5
+110294 Heartbeat Leader=6, Term=1 -> Server=0
+110295 Heartbeat Leader=6, Term=1 -> Server=2
+110295 Heartbeat Leader=6, Term=1 -> Server=3
+110296 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+110296 Heartbeat Leader=6, Term=1 -> Server=4
+110296 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+110296 Heartbeat Follower 2 收到来自Leader=6,Term=1的Heartbeat
+110297 Heartbeat Leader=6, Term=1 -> Server=1
+110297 Heartbeat Follower 4 收到来自Leader=6,Term=1的Heartbeat
+110297 Heartbeat Follower 3 收到来自Leader=6,Term=1的Heartbeat
+110298 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+111300 Heartbeat Leader=6, Term=1 -> Server=5
+111301 Heartbeat Leader=6, Term=1 -> Server=2
+111302 Heartbeat Leader=6, Term=1 -> Server=3
+111302 Heartbeat Follower 2 收到来自Leader=6,Term=1的Heartbeat
+111302 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+111302 Heartbeat Leader=6, Term=1 -> Server=1
+111302 Heartbeat Leader=6, Term=1 -> Server=4
+111302 Heartbeat Leader=6, Term=1 -> Server=0
+111303 Heartbeat Follower 3 收到来自Leader=6,Term=1的Heartbeat
+111303 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+111303 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+111304 Heartbeat Follower 4 收到来自Leader=6,Term=1的Heartbeat
+112313 Heartbeat Leader=6, Term=1 -> Server=5
+112314 Heartbeat Leader=6, Term=1 -> Server=2
+112315 Heartbeat Leader=6, Term=1 -> Server=0
+112315 Heartbeat Leader=6, Term=1 -> Server=1
+112315 Heartbeat Leader=6, Term=1 -> Server=4
+112315 Heartbeat Leader=6, Term=1 -> Server=3
+112316 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+112316 Heartbeat Follower 3 收到来自Leader=6,Term=1的Heartbeat
+112315 Heartbeat Follower 2 收到来自Leader=6,Term=1的Heartbeat
+112316 Heartbeat Follower 4 收到来自Leader=6,Term=1的Heartbeat
+112315 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+112317 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+113315 Heartbeat Leader=6, Term=1 -> Server=5
+113316 Heartbeat Leader=6, Term=1 -> Server=2
+113316 Heartbeat Leader=6, Term=1 -> Server=0
+113317 Heartbeat Leader=6, Term=1 -> Server=3
+113317 Heartbeat Leader=6, Term=1 -> Server=4
+113317 Heartbeat Leader=6, Term=1 -> Server=1
+113318 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+113318 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+113318 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+114070 VOTE Candidate 2, Term= 6向Server 0请求投票failed
+114103 VOTE Candidate 1, Term= 6向Server 2请求投票failed
+114319 Heartbeat Leader=6, Term=1 -> Server=5
+114320 Heartbeat Leader=6, Term=1 -> Server=1
+114320 Heartbeat Leader=6, Term=1 -> Server=0
+114320 Heartbeat Leader=6, Term=1 -> Server=3
+114321 Heartbeat Leader=6, Term=1 -> Server=4
+114320 Heartbeat Leader=6, Term=1 -> Server=2
+114322 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+114322 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+114322 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+114814 VOTE Candidate 1, Term= 6向Server 0请求投票failed
+115323 Heartbeat Leader=6, Term=1 -> Server=5
+115324 Heartbeat Leader=6, Term=1 -> Server=2
+115324 Heartbeat Leader=6, Term=1 -> Server=0
+115324 Heartbeat Leader=6, Term=1 -> Server=4
+115324 Heartbeat Leader=6, Term=1 -> Server=3
+115325 Heartbeat Leader=6, Term=1 -> Server=1
+115325 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+115326 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+115325 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+116328 Heartbeat Leader=6, Term=1 -> Server=5
+116329 Heartbeat Leader=6, Term=1 -> Server=4
+116328 Heartbeat Leader=6, Term=1 -> Server=2
+116329 Heartbeat Leader=6, Term=1 -> Server=0
+116330 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+116329 Heartbeat Leader=6, Term=1 -> Server=1
+116330 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+116329 Heartbeat Leader=6, Term=1 -> Server=3
+116331 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+117342 Heartbeat Leader=6, Term=1 -> Server=5
+117343 Heartbeat Leader=6, Term=1 -> Server=2
+117343 Heartbeat Leader=6, Term=1 -> Server=0
+117344 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+117344 Heartbeat Leader=6, Term=1 -> Server=3
+117344 Heartbeat Leader=6, Term=1 -> Server=4
+117344 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+117344 Heartbeat Leader=6, Term=1 -> Server=1
+117346 Heartbeat Follower 1 收到来自Leader=6,Term=1的Heartbeat
+118348 Heartbeat Leader=6, Term=1 -> Server=5
+118349 Heartbeat Leader=6, Term=1 -> Server=2
+118349 Heartbeat Leader=6, Term=1 -> Server=3
+118350 Heartbeat Leader=6, Term=1 -> Server=4
+118350 Heartbeat Leader=6, Term=1 -> Server=0
+118350 Heartbeat Leader=6, Term=1 -> Server=1
+119356 Heartbeat Leader=6, Term=1 -> Server=5
+119357 Heartbeat Leader=6, Term=1 -> Server=2
+119357 Heartbeat Leader=6, Term=1 -> Server=3
+119357 Heartbeat Leader=6, Term=1 -> Server=0
+119358 Heartbeat Leader=6, Term=1 -> Server=1
+119358 Heartbeat Leader=6, Term=1 -> Server=4
+120361 Heartbeat Leader=6, Term=1 -> Server=5
+120361 Heartbeat Leader=6, Term=1 -> Server=2
+120362 Heartbeat Leader=6, Term=1 -> Server=3
+120362 Heartbeat Leader=6, Term=1 -> Server=4
+120362 Heartbeat Leader=6, Term=1 -> Server=0
+120362 Heartbeat Leader=6, Term=1 -> Server=1
+120856 VOTE Candidate 2, Term= 6向Server 1请求投票failed
+121370 Heartbeat Leader=6, Term=1 -> Server=5
+121370 Heartbeat Leader=6, Term=1 -> Server=2
+121371 Heartbeat Leader=6, Term=1 -> Server=3
+121371 Heartbeat Leader=6, Term=1 -> Server=0
+121371 Heartbeat Leader=6, Term=1 -> Server=4
+121371 Heartbeat Leader=6, Term=1 -> Server=1
+122379 Heartbeat Leader=6, Term=1 -> Server=5
+122379 Heartbeat Leader=6, Term=1 -> Server=1
+122379 Heartbeat Leader=6, Term=1 -> Server=0
+122379 Heartbeat Leader=6, Term=1 -> Server=3
+122379 Heartbeat Leader=6, Term=1 -> Server=2
+122380 Heartbeat Leader=6, Term=1 -> Server=4
+122446 INFO 距离上一次收到Leader的消息过去了:1013 ms
+122448 INFO Follower 2准备发起选举
+122448 Candidate Candidate 2准备发起选举,Term=2
+122451 VOTE Candidate 2, Term= 2收到了来自Server 3,Term=2的投票,结果是true
+122451 VOTE Candidate 2, Term= 2持有2票
+122451 VOTE Candidate 2, Term= 2收到了来自Server 1,Term=2的投票,结果是true
+122451 VOTE Candidate 2, Term= 2持有3票
+122452 VOTE Candidate 2, Term= 2收到了来自Server 5,Term=2的投票,结果是true
+122452 LEAD 2成为了Leader,term=2
+122452 VOTE Candidate 2, Term= 2持有4票
+122452 Heartbeat Leader=2, Term=2 -> Server=6
+122453 Heartbeat Leader=2, Term=2 -> Server=4
+122453 Heartbeat Leader=2, Term=2 -> Server=3
+122453 Heartbeat Leader=2, Term=2 -> Server=0
+122453 Heartbeat Leader=2, Term=2 -> Server=5
+122453 Heartbeat Leader=2, Term=2 -> Server=1
+122454 Heartbeat Follower 3 收到来自Leader=2,Term=2的Heartbeat
+122454 Heartbeat Follower 5 收到来自Leader=2,Term=2的Heartbeat
+122454 Heartbeat Follower 1 收到来自Leader=2,Term=2的Heartbeat
+123390 Heartbeat Leader=2, Term=2 -> Server=6
+123390 Heartbeat Leader=2, Term=2 -> Server=3
+123391 Heartbeat Leader=2, Term=2 -> Server=4
+123391 Heartbeat Leader=2, Term=2 -> Server=0
+123391 Heartbeat Leader=2, Term=2 -> Server=5
+123391 Heartbeat Leader=6, Term=1 -> Server=5
+123391 Heartbeat Leader=6, Term=1 -> Server=2
+123391 Heartbeat Leader=2, Term=2 -> Server=1
+123391 Heartbeat Leader=6, Term=1 -> Server=0
+123392 Heartbeat Leader=6, Term=1 -> Server=3
+123392 Heartbeat Leader=6, Term=1 -> Server=1
+123392 Heartbeat Follower 0 收到来自Leader=6,Term=1的Heartbeat
+123392 Heartbeat Leader=6, Term=1 -> Server=4
+123393 Heartbeat Follower 3 收到来自Leader=6,Term=1的Heartbeat
+123394 LEAD Leader: 6,term=1退位了
+123392 Heartbeat Follower 5 收到来自Leader=6,Term=1的Heartbeat
+123394 Heartbeat Follower 4 收到来自Leader=6,Term=1的Heartbeat
+124396 Heartbeat Leader=2, Term=2 -> Server=6
+124397 Heartbeat Leader=2, Term=2 -> Server=3
+124397 Heartbeat Leader=2, Term=2 -> Server=4
+124397 Heartbeat Leader=2, Term=2 -> Server=0
+124398 Heartbeat Leader=2, Term=2 -> Server=1
+124398 Heartbeat Leader=2, Term=2 -> Server=5
+125408 Heartbeat Leader=2, Term=2 -> Server=6
+125408 Heartbeat Leader=2, Term=2 -> Server=3
+125409 Heartbeat Leader=2, Term=2 -> Server=4
+125409 Heartbeat Leader=2, Term=2 -> Server=0
+125409 Heartbeat Leader=2, Term=2 -> Server=1
+125409 Heartbeat Leader=2, Term=2 -> Server=5
+126409 Heartbeat Leader=2, Term=2 -> Server=6
+126410 Heartbeat Leader=2, Term=2 -> Server=3
+126410 Heartbeat Leader=2, Term=2 -> Server=4
+126410 Heartbeat Leader=2, Term=2 -> Server=5
+126410 Heartbeat Leader=2, Term=2 -> Server=0
+126411 Heartbeat Leader=2, Term=2 -> Server=1
+127415 Heartbeat Leader=2, Term=2 -> Server=6
+127415 Heartbeat Leader=2, Term=2 -> Server=1
+127415 Heartbeat Leader=2, Term=2 -> Server=0
+127415 Heartbeat Leader=2, Term=2 -> Server=5
+127415 Heartbeat Leader=2, Term=2 -> Server=3
+127415 Heartbeat Leader=2, Term=2 -> Server=4
+128423 Heartbeat Leader=2, Term=2 -> Server=6
+128424 Heartbeat Leader=2, Term=2 -> Server=3
+128424 Heartbeat Leader=2, Term=2 -> Server=1
+128424 Heartbeat Leader=2, Term=2 -> Server=4
+128424 Heartbeat Leader=2, Term=2 -> Server=0
+128424 Heartbeat Leader=2, Term=2 -> Server=5
+128932 VOTE Candidate 2, Term= 6向Server 0请求投票failed
+129432 Heartbeat Leader=2, Term=2 -> Server=6
+129433 Heartbeat Leader=2, Term=2 -> Server=3
+129433 Heartbeat Leader=2, Term=2 -> Server=4
+129433 Heartbeat Leader=2, Term=2 -> Server=0
+129433 Heartbeat Leader=2, Term=2 -> Server=1
+129433 Heartbeat Leader=2, Term=2 -> Server=5
+129914 INFO 距离上一次收到Leader的消息过去了:652 ms
+129915 INFO Follower 0准备发起选举
+129915 Candidate Candidate 0准备发起选举,Term=2
+129917 VOTE Candidate 0, Term= 2收到了来自Server 6,Term=2的投票,结果是false
+129918 VOTE Candidate 0, Term= 2收到了来自Server 5,Term=2的投票,结果是true
+129918 VOTE Candidate 0, Term= 2持有2票
+129918 VOTE Candidate 0, Term= 2收到了来自Server 4,Term=2的投票,结果是true
+129918 VOTE Candidate 0, Term= 2持有3票
+129918 VOTE Candidate 0, Term= 2收到了来自Server 3,Term=2的投票,结果是true
+129918 LEAD 0成为了Leader,term=2
+129918 VOTE Candidate 0, Term= 2持有4票
+129918 Heartbeat Leader=0, Term=2 -> Server=6
+129919 Heartbeat Leader=0, Term=2 -> Server=3
+129919 Heartbeat Leader=0, Term=2 -> Server=2
+129920 Heartbeat Follower 3 收到来自Leader=0,Term=2的Heartbeat
+129919 Heartbeat Follower 6 收到来自Leader=0,Term=2的Heartbeat
+129919 Heartbeat Leader=0, Term=2 -> Server=4
+129922 Heartbeat Follower 4 收到来自Leader=0,Term=2的Heartbeat
+129919 Heartbeat Leader=0, Term=2 -> Server=5
+129919 Heartbeat Leader=0, Term=2 -> Server=1
+129923 Heartbeat Follower 5 收到来自Leader=0,Term=2的Heartbeat
+130438 Heartbeat Leader=0, Term=2 -> Server=6
+130439 Heartbeat Leader=0, Term=2 -> Server=3
+130440 Heartbeat Leader=2, Term=2 -> Server=6
+130440 Heartbeat Leader=2, Term=2 -> Server=0
+130440 Heartbeat Follower 6 收到来自Leader=0,Term=2的Heartbeat
+130441 Heartbeat Leader=2, Term=2 -> Server=4
+130441 Heartbeat Follower 3 收到来自Leader=0,Term=2的Heartbeat
+130441 Heartbeat Leader=0, Term=2 -> Server=4
+130441 Heartbeat Leader=0, Term=2 -> Server=1
+130441 Heartbeat Leader=0, Term=2 -> Server=5
+130441 Heartbeat Leader=2, Term=2 -> Server=5
+130440 Heartbeat Leader=2, Term=2 -> Server=3
+130441 Heartbeat Leader=2, Term=2 -> Server=1
+130442 Heartbeat Follower 4 收到来自Leader=0,Term=2的Heartbeat
+130443 Heartbeat Follower 5 收到来自Leader=0,Term=2的Heartbeat
+130442 Heartbeat Leader=0, Term=2 -> Server=2
+131449 Heartbeat Leader=0, Term=2 -> Server=6
+131450 Heartbeat Leader=0, Term=2 -> Server=5
+131451 Heartbeat Leader=0, Term=2 -> Server=2
+131451 Heartbeat Leader=2, Term=2 -> Server=6
+131451 Heartbeat Leader=2, Term=2 -> Server=3
+131452 Heartbeat Leader=2, Term=2 -> Server=4
+131452 Heartbeat Leader=2, Term=2 -> Server=0
+131452 Heartbeat Leader=2, Term=2 -> Server=1
+131453 Heartbeat Leader=2, Term=2 -> Server=5
+131450 Heartbeat Leader=0, Term=2 -> Server=3
+131453 Heartbeat Follower 6 收到来自Leader=0,Term=2的Heartbeat
+131454 Heartbeat Follower 5 收到来自Leader=0,Term=2的Heartbeat
+131450 Heartbeat Leader=0, Term=2 -> Server=4
+131454 Heartbeat Follower 3 收到来自Leader=0,Term=2的Heartbeat
+131450 Heartbeat Leader=0, Term=2 -> Server=1
+131456 Heartbeat Follower 4 收到来自Leader=0,Term=2的Heartbeat
+132458 Heartbeat Leader=2, Term=2 -> Server=6
+132459 Heartbeat Leader=2, Term=2 -> Server=3
+132459 Heartbeat Leader=2, Term=2 -> Server=4
+132459 Heartbeat Leader=2, Term=2 -> Server=0
+132459 Heartbeat Leader=2, Term=2 -> Server=1
+132459 Heartbeat Leader=2, Term=2 -> Server=5
+132460 Heartbeat Leader=0, Term=2 -> Server=6
+132460 Heartbeat Leader=0, Term=2 -> Server=2
+132460 Heartbeat Leader=0, Term=2 -> Server=1
+132460 Heartbeat Leader=0, Term=2 -> Server=5
+132460 Heartbeat Leader=0, Term=2 -> Server=3
+132461 Heartbeat Leader=0, Term=2 -> Server=4
+132461 Heartbeat Follower 6 收到来自Leader=0,Term=2的Heartbeat
+132461 Heartbeat Follower 5 收到来自Leader=0,Term=2的Heartbeat
+132462 Heartbeat Follower 3 收到来自Leader=0,Term=2的Heartbeat
+132462 Heartbeat Follower 4 收到来自Leader=0,Term=2的Heartbeat
+133108 VOTE Candidate 2, Term= 2向Server 4请求投票failed
+133466 Heartbeat Leader=0, Term=2 -> Server=6
+133466 Heartbeat Leader=0, Term=2 -> Server=2
+133467 Heartbeat Leader=0, Term=2 -> Server=5
+133467 Heartbeat Leader=2, Term=2 -> Server=6
+133467 Heartbeat Leader=2, Term=2 -> Server=0
+133467 Heartbeat Leader=0, Term=2 -> Server=4
+133468 Heartbeat Leader 2 收到来自Leader=0,Term=2的Heartbeat
+133468 Heartbeat Follower 6 收到来自Leader=2,Term=2的Heartbeat
+133466 Heartbeat Leader=0, Term=2 -> Server=3
+133468 Heartbeat Leader 0 收到来自Leader=2,Term=2的Heartbeat
+133468 Heartbeat Leader=2, Term=2 -> Server=3
+133469 Heartbeat Follower 3 收到来自Leader=0,Term=2的Heartbeat
+133468 Heartbeat Follower 4 收到来自Leader=0,Term=2的Heartbeat
+133469 Heartbeat Leader=2, Term=2 -> Server=5
+133467 Heartbeat Leader=2, Term=2 -> Server=1
+133469 Heartbeat Leader=2, Term=2 -> Server=4
+133466 Heartbeat Leader=0, Term=2 -> Server=1
+133469 Heartbeat Follower 6 收到来自Leader=0,Term=2的Heartbeat
+133470 Heartbeat Follower 4 收到来自Leader=2,Term=2的Heartbeat
+133470 Heartbeat Follower 3 收到来自Leader=2,Term=2的Heartbeat
+133723 INFO 距离上一次收到Leader的消息过去了:1126 ms
+133724 INFO Follower 1准备发起选举
+133724 Candidate Candidate 1准备发起选举,Term=3
+136463 VOTE Candidate 2, Term= 2向Server 0请求投票failed
+137677 VOTE Candidate 2, Term= 2向Server 6请求投票failed
+139579 VOTE Candidate 1, Term= 6向Server 2请求投票failed
+140689 INFO 距离上一次收到Leader的消息过去了:822 ms
+140689 INFO Follower 5准备发起选举
+140690 Candidate Candidate 5准备发起选举,Term=3
+142634 INFO 距离上一次收到Leader的消息过去了:890 ms
+142634 INFO Follower 1准备发起选举
+142634 Candidate Candidate 1准备发起选举,Term=4
+142826 INFO 距离上一次收到Leader的消息过去了:935 ms
+142826 INFO Follower 3准备发起选举
+142826 Candidate Candidate 3准备发起选举,Term=3
+142829 VOTE Candidate 3, Term= 3收到了来自Server 6,Term=3的投票,结果是true
+142829 VOTE Candidate 3, Term= 3持有2票
+142829 VOTE Candidate 3, Term= 3收到了来自Server 2,Term=3的投票,结果是true
+142829 VOTE Candidate 3, Term= 3持有3票
+142829 VOTE Candidate 3, Term= 3收到了来自Server 0,Term=3的投票,结果是true
+142830 LEAD 3成为了Leader,term=3
+142830 VOTE Candidate 3, Term= 3持有4票
+142829 VOTE Candidate 3, Term= 3收到了来自Server 4,Term=3的投票,结果是true
+142830 Heartbeat Leader=3, Term=3 -> Server=0
+142830 Heartbeat Leader=3, Term=3 -> Server=6
+142830 Heartbeat Leader=3, Term=3 -> Server=2
+142830 Heartbeat Leader=3, Term=3 -> Server=1
+142831 Heartbeat Follower 6 收到来自Leader=3,Term=3的Heartbeat
+142831 Heartbeat Leader=3, Term=3 -> Server=5
+142831 Heartbeat Follower 0 收到来自Leader=3,Term=3的Heartbeat
+142830 LEAD 3成为了Leader,term=3
+142831 Heartbeat Leader=3, Term=3 -> Server=4
+142831 VOTE Candidate 3, Term= 3持有5票
+142831 Heartbeat Follower 2 收到来自Leader=3,Term=3的Heartbeat
+142831 Heartbeat Leader=3, Term=3 -> Server=6
+142831 Heartbeat Leader=3, Term=3 -> Server=2
+142832 Heartbeat Follower 4 收到来自Leader=3,Term=3的Heartbeat
+142832 Heartbeat Leader=3, Term=3 -> Server=4
+142832 Heartbeat Leader=3, Term=3 -> Server=0
+142833 Heartbeat Follower 2 收到来自Leader=3,Term=3的Heartbeat
+142833 Heartbeat Leader=3, Term=3 -> Server=1
+142833 Heartbeat Follower 4 收到来自Leader=3,Term=3的Heartbeat
+142832 Heartbeat Leader=3, Term=3 -> Server=5
+142833 Heartbeat Follower 0 收到来自Leader=3,Term=3的Heartbeat
+142832 Heartbeat Follower 6 收到来自Leader=3,Term=3的Heartbeat
+143541 Heartbeat Leader=3, Term=3 -> Server=6
+143541 Heartbeat Leader=3, Term=3 -> Server=0
+143542 Heartbeat Leader=3, Term=3 -> Server=2
+143542 Heartbeat Leader=3, Term=3 -> Server=4
+143542 Heartbeat Leader=3, Term=3 -> Server=1
+143542 Heartbeat Follower 6 收到来自Leader=3,Term=3的Heartbeat
+143542 Heartbeat Leader=3, Term=3 -> Server=5
+143544 Heartbeat Candidate 5 收到来自Leader=3,Term=3的Heartbeat
+143543 Heartbeat Follower 4 收到来自Leader=3,Term=3的Heartbeat
+144407 VOTE Candidate 1, Term= 4向Server 2请求投票failed
+144551 Heartbeat Leader=3, Term=3 -> Server=6
+144552 Heartbeat Leader=3, Term=3 -> Server=2
+144552 Heartbeat Leader=3, Term=3 -> Server=0
+144553 Heartbeat Follower 6 收到来自Leader=3,Term=3的Heartbeat
+144553 Heartbeat Leader=3, Term=3 -> Server=5
+144553 Heartbeat Leader=3, Term=3 -> Server=1
+144553 Heartbeat Leader=3, Term=3 -> Server=4
+144554 Heartbeat Follower 5 收到来自Leader=3,Term=3的Heartbeat
+144554 Heartbeat Follower 4 收到来自Leader=3,Term=3的Heartbeat
+145558 Heartbeat Leader=3, Term=3 -> Server=6
+145559 Heartbeat Leader=3, Term=3 -> Server=1
+145559 Heartbeat Leader=3, Term=3 -> Server=5
+145559 Heartbeat Leader=3, Term=3 -> Server=0
+145559 Heartbeat Leader=3, Term=3 -> Server=2
+145559 Heartbeat Leader=3, Term=3 -> Server=4
+145560 Heartbeat Follower 5 收到来自Leader=3,Term=3的Heartbeat
+145561 Heartbeat Follower 4 收到来自Leader=3,Term=3的Heartbeat
+145560 Heartbeat Follower 6 收到来自Leader=3,Term=3的Heartbeat
+146572 Heartbeat Leader=3, Term=3 -> Server=6
+146572 Heartbeat Leader=3, Term=3 -> Server=0
+146572 Heartbeat Leader=3, Term=3 -> Server=2
+146573 Heartbeat Leader=3, Term=3 -> Server=1
+146575 Heartbeat Follower 6 收到来自Leader=3,Term=3的Heartbeat
+146573 Heartbeat Leader=3, Term=3 -> Server=4
+146573 Heartbeat Leader=3, Term=3 -> Server=5
+146578 Heartbeat Follower 4 收到来自Leader=3,Term=3的Heartbeat
+146579 Heartbeat Follower 5 收到来自Leader=3,Term=3的Heartbeat
+147581 Heartbeat Leader=3, Term=3 -> Server=6
+147582 Heartbeat Leader=3, Term=3 -> Server=2
+147583 Heartbeat Leader=3, Term=3 -> Server=0
+147583 Heartbeat Leader=3, Term=3 -> Server=1
+147583 Heartbeat Follower 6 收到来自Leader=3,Term=3的Heartbeat
+147583 Heartbeat Leader=3, Term=3 -> Server=5
+147585 Heartbeat Follower 5 收到来自Leader=3,Term=3的Heartbeat
+147583 Heartbeat Leader=3, Term=3 -> Server=4
+147588 Heartbeat Follower 4 收到来自Leader=3,Term=3的Heartbeat
+147919 INFO 距离上一次收到Leader的消息过去了:528 ms
+147919 INFO Follower 1准备发起选举
+147919 Candidate Candidate 1准备发起选举,Term=5
+147921 VOTE Candidate 1, Term= 5收到了来自Server 3,Term=5的投票,结果是true
+147922 VOTE Candidate 1, Term= 5收到了来自Server 6,Term=5的投票,结果是true
+147922 VOTE Candidate 1, Term= 5持有2票
+147922 VOTE Candidate 1, Term= 5持有3票
+147921 VOTE Candidate 1, Term= 5收到了来自Server 5,Term=5的投票,结果是true
+147922 LEAD 1成为了Leader,term=5
+147922 VOTE Candidate 1, Term= 5持有4票
+147922 Heartbeat Leader=1, Term=5 -> Server=6
+147922 Heartbeat Leader=1, Term=5 -> Server=3
+147923 Heartbeat Follower 6 收到来自Leader=1,Term=5的Heartbeat
+147923 Heartbeat Leader=1, Term=5 -> Server=0
+147923 Heartbeat Leader 3 收到来自Leader=1,Term=5的Heartbeat
+147923 Heartbeat Leader=1, Term=5 -> Server=4
+147923 Heartbeat Leader=1, Term=5 -> Server=5
+147923 Heartbeat Leader=1, Term=5 -> Server=2
+147924 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+148584 Heartbeat Leader=1, Term=5 -> Server=6
+148585 Heartbeat Leader=1, Term=5 -> Server=5
+148586 Heartbeat Follower 6 收到来自Leader=1,Term=5的Heartbeat
+148584 Heartbeat Leader=1, Term=5 -> Server=3
+148588 Heartbeat Follower 3 收到来自Leader=1,Term=5的Heartbeat
+148584 Heartbeat Leader=1, Term=5 -> Server=0
+148584 Heartbeat Leader=1, Term=5 -> Server=2
+148585 Heartbeat Leader=1, Term=5 -> Server=4
+148586 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+148697 VOTE Candidate 0, Term= 3向Server 2请求投票failed
+149044 INFO 距离上一次收到Leader的消息过去了:621 ms
+149045 INFO Follower 0准备发起选举
+149045 Candidate Candidate 0准备发起选举,Term=4
+149590 Heartbeat Leader=1, Term=5 -> Server=0
+149590 Heartbeat Leader=1, Term=5 -> Server=2
+149590 Heartbeat Leader=1, Term=5 -> Server=3
+149593 Heartbeat Follower 3 收到来自Leader=1,Term=5的Heartbeat
+149589 Heartbeat Leader=1, Term=5 -> Server=6
+149590 Heartbeat Leader=1, Term=5 -> Server=4
+149594 Heartbeat Follower 6 收到来自Leader=1,Term=5的Heartbeat
+149590 Heartbeat Leader=1, Term=5 -> Server=5
+149596 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+150138 INFO 距离上一次收到Leader的消息过去了:730 ms
+150139 INFO Follower 2准备发起选举
+150139 Candidate Candidate 2准备发起选举,Term=4
+150597 Heartbeat Leader=1, Term=5 -> Server=6
+150598 Heartbeat Leader=1, Term=5 -> Server=3
+150599 Heartbeat Leader=1, Term=5 -> Server=4
+150599 Heartbeat Leader=1, Term=5 -> Server=5
+150599 Heartbeat Follower 6 收到来自Leader=1,Term=5的Heartbeat
+150599 Heartbeat Leader=1, Term=5 -> Server=0
+150599 Heartbeat Follower 3 收到来自Leader=1,Term=5的Heartbeat
+150600 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+150599 Heartbeat Leader=1, Term=5 -> Server=2
+151507 VOTE Candidate 5, Term= 5向Server 0请求投票failed
+151600 Heartbeat Leader=1, Term=5 -> Server=6
+151601 Heartbeat Leader=1, Term=5 -> Server=0
+151602 Heartbeat Leader=1, Term=5 -> Server=5
+151601 Heartbeat Leader=1, Term=5 -> Server=2
+151602 Heartbeat Follower 6 收到来自Leader=1,Term=5的Heartbeat
+151603 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+151602 Heartbeat Leader=1, Term=5 -> Server=4
+151602 Heartbeat Leader=1, Term=5 -> Server=3
+151604 Heartbeat Follower 3 收到来自Leader=1,Term=5的Heartbeat
+152267 VOTE Candidate 1, Term= 5向Server 6请求投票failed
+152608 Heartbeat Leader=1, Term=5 -> Server=6
+152610 Heartbeat Leader=1, Term=5 -> Server=3
+152611 Heartbeat Leader=1, Term=5 -> Server=0
+152611 Heartbeat Leader=1, Term=5 -> Server=4
+152611 Heartbeat Leader=1, Term=5 -> Server=5
+152611 Heartbeat Leader=1, Term=5 -> Server=2
+152615 Heartbeat Follower 4 收到来自Leader=1,Term=5的Heartbeat
+152613 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+152613 Heartbeat Follower 3 收到来自Leader=1,Term=5的Heartbeat
+152616 Heartbeat Candidate 2 收到来自Leader=1,Term=5的Heartbeat
+153609 Heartbeat Leader=1, Term=5 -> Server=6
+153610 Heartbeat Leader=1, Term=5 -> Server=4
+153610 Heartbeat Leader=1, Term=5 -> Server=2
+153612 Heartbeat Follower 4 收到来自Leader=1,Term=5的Heartbeat
+153610 Heartbeat Leader=1, Term=5 -> Server=0
+153610 Heartbeat Leader=1, Term=5 -> Server=5
+153612 Heartbeat Follower 2 收到来自Leader=1,Term=5的Heartbeat
+153610 Heartbeat Leader=1, Term=5 -> Server=3
+153613 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+153614 Heartbeat Follower 3 收到来自Leader=1,Term=5的Heartbeat
+154276 VOTE Candidate 1, Term= 5向Server 5请求投票failed
+154617 Heartbeat Leader=1, Term=5 -> Server=6
+154618 Heartbeat Leader=1, Term=5 -> Server=3
+154618 Heartbeat Leader=1, Term=5 -> Server=0
+154619 Heartbeat Leader=1, Term=5 -> Server=2
+154618 Heartbeat Leader=1, Term=5 -> Server=4
+154620 Heartbeat Follower 2 收到来自Leader=1,Term=5的Heartbeat
+154620 Heartbeat Follower 3 收到来自Leader=1,Term=5的Heartbeat
+154618 Heartbeat Leader=1, Term=5 -> Server=5
+154627 Heartbeat Follower 4 收到来自Leader=1,Term=5的Heartbeat
+154628 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+155623 Heartbeat Leader=1, Term=5 -> Server=6
+155624 Heartbeat Leader=1, Term=5 -> Server=3
+155624 Heartbeat Leader=1, Term=5 -> Server=4
+155625 Heartbeat Leader=1, Term=5 -> Server=0
+155625 Heartbeat Follower 3 收到来自Leader=1,Term=5的Heartbeat
+155625 Heartbeat Leader=1, Term=5 -> Server=5
+155625 Heartbeat Follower 4 收到来自Leader=1,Term=5的Heartbeat
+155625 Heartbeat Leader=1, Term=5 -> Server=2
+155627 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+155629 Heartbeat Follower 2 收到来自Leader=1,Term=5的Heartbeat
+156200 INFO 距离上一次收到Leader的消息过去了:715 ms
+156200 INFO Follower 0准备发起选举
+156200 Candidate Candidate 0准备发起选举,Term=5
+156627 Heartbeat Leader=1, Term=5 -> Server=6
+156628 Heartbeat Leader=1, Term=5 -> Server=3
+156628 Heartbeat Leader=1, Term=5 -> Server=4
+156628 Heartbeat Leader=1, Term=5 -> Server=0
+156628 Heartbeat Leader=1, Term=5 -> Server=2
+156629 Heartbeat Follower 3 收到来自Leader=1,Term=5的Heartbeat
+156628 Heartbeat Leader=1, Term=5 -> Server=5
+156629 Heartbeat Follower 4 收到来自Leader=1,Term=5的Heartbeat
+156630 Heartbeat Follower 2 收到来自Leader=1,Term=5的Heartbeat
+156630 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+157632 Heartbeat Leader=1, Term=5 -> Server=6
+157634 Heartbeat Leader=1, Term=5 -> Server=0
+157634 Heartbeat Leader=1, Term=5 -> Server=2
+157635 Heartbeat Leader=1, Term=5 -> Server=4
+157635 Heartbeat Follower 2 收到来自Leader=1,Term=5的Heartbeat
+157635 Heartbeat Leader=1, Term=5 -> Server=5
+157635 Heartbeat Leader=1, Term=5 -> Server=3
+158038 VOTE Candidate 2, Term= 5向Server 6请求投票failed
+158566 VOTE Candidate 1, Term= 5向Server 4请求投票failed
+158638 Heartbeat Leader=1, Term=5 -> Server=6
+158639 Heartbeat Leader=1, Term=5 -> Server=3
+158639 Heartbeat Leader=1, Term=5 -> Server=4
+158640 Heartbeat Leader=1, Term=5 -> Server=0
+158640 Heartbeat Leader=1, Term=5 -> Server=2
+158640 Heartbeat Leader=1, Term=5 -> Server=5
+158743 VOTE Candidate 1, Term= 5向Server 0请求投票failed
+159650 Heartbeat Leader=1, Term=5 -> Server=6
+159650 Heartbeat Leader=1, Term=5 -> Server=0
+159650 Heartbeat Leader=1, Term=5 -> Server=4
+159650 Heartbeat Leader=1, Term=5 -> Server=3
+159651 Heartbeat Leader=1, Term=5 -> Server=2
+159651 Heartbeat Leader=1, Term=5 -> Server=5
+160188 VOTE Candidate 0, Term= 5向Server 3请求投票failed
+160656 Heartbeat Leader=1, Term=5 -> Server=6
+160656 Heartbeat Leader=1, Term=5 -> Server=4
+160656 Heartbeat Leader=1, Term=5 -> Server=3
+160656 Heartbeat Leader=1, Term=5 -> Server=0
+160657 Heartbeat Leader=1, Term=5 -> Server=5
+160656 Heartbeat Leader=1, Term=5 -> Server=2
+161664 Heartbeat Leader=1, Term=5 -> Server=6
+161665 Heartbeat Leader=1, Term=5 -> Server=3
+161665 Heartbeat Leader=1, Term=5 -> Server=0
+161665 Heartbeat Leader=1, Term=5 -> Server=2
+161665 Heartbeat Leader=1, Term=5 -> Server=4
+161665 Heartbeat Leader=1, Term=5 -> Server=5
+162282 INFO 距离上一次收到Leader的消息过去了:608 ms
+162283 INFO Follower 0准备发起选举
+162283 Candidate Candidate 0准备发起选举,Term=6
+162287 VOTE Candidate 0, Term= 6收到了来自Server 2,Term=6的投票,结果是true
+162289 VOTE Candidate 0, Term= 6持有2票
+162287 VOTE Candidate 0, Term= 6收到了来自Server 5,Term=6的投票,结果是true
+162289 VOTE Candidate 0, Term= 6持有3票
+162288 VOTE Candidate 0, Term= 6收到了来自Server 4,Term=6的投票,结果是true
+162289 LEAD 0成为了Leader,term=6
+162289 VOTE Candidate 0, Term= 6持有4票
+162290 Heartbeat Leader=0, Term=6 -> Server=6
+162290 Heartbeat Leader=0, Term=6 -> Server=2
+162291 Heartbeat Leader=0, Term=6 -> Server=4
+162292 Heartbeat Follower 4 收到来自Leader=0,Term=6的Heartbeat
+162292 Heartbeat Follower 2 收到来自Leader=0,Term=6的Heartbeat
+162291 Heartbeat Leader=0, Term=6 -> Server=3
+162291 Heartbeat Leader=0, Term=6 -> Server=5
+162288 VOTE Candidate 0, Term= 6收到了来自Server 3,Term=6的投票,结果是true
+162295 LEAD 0成为了Leader,term=6
+162296 VOTE Candidate 0, Term= 6持有5票
+162296 Heartbeat Leader=0, Term=6 -> Server=6
+162291 Heartbeat Leader=0, Term=6 -> Server=1
+162296 Heartbeat Leader=0, Term=6 -> Server=3
+162296 Heartbeat Leader=0, Term=6 -> Server=4
+162297 Heartbeat Leader=0, Term=6 -> Server=2
+162297 Heartbeat Leader=0, Term=6 -> Server=1
+162297 Heartbeat Leader=0, Term=6 -> Server=5
+162298 Heartbeat Follower 2 收到来自Leader=0,Term=6的Heartbeat
+162297 Heartbeat Follower 4 收到来自Leader=0,Term=6的Heartbeat
+162295 Heartbeat Follower 5 收到来自Leader=0,Term=6的Heartbeat
+162296 VOTE Candidate 1, Term= 5向Server 3请求投票failed
+162300 Heartbeat Follower 5 收到来自Leader=0,Term=6的Heartbeat
+162293 Heartbeat Follower 3 收到来自Leader=0,Term=6的Heartbeat
+162300 Heartbeat Follower 3 收到来自Leader=0,Term=6的Heartbeat
+162666 Heartbeat Leader=0, Term=6 -> Server=6
+162667 Heartbeat Leader=1, Term=5 -> Server=6
+162668 Heartbeat Leader=0, Term=6 -> Server=3
+162668 Heartbeat Leader=0, Term=6 -> Server=4
+162668 Heartbeat Follower 6 收到来自Leader=1,Term=5的Heartbeat
+162668 Heartbeat Leader=0, Term=6 -> Server=5
+162668 Heartbeat Leader=0, Term=6 -> Server=1
+162669 Heartbeat Leader=1, Term=5 -> Server=0
+162669 Heartbeat Follower 5 收到来自Leader=0,Term=6的Heartbeat
+162669 Heartbeat Follower 3 收到来自Leader=0,Term=6的Heartbeat
+162670 Heartbeat Leader 1 收到来自Leader=0,Term=6的Heartbeat
+162670 Heartbeat Leader=0, Term=6 -> Server=2
+162670 Heartbeat Leader=1, Term=6 -> Server=2
+162670 Heartbeat Leader 0 收到来自Leader=1,Term=5的Heartbeat
+162670 Heartbeat Leader=1, Term=6 -> Server=3
+162670 Heartbeat Leader=1, Term=6 -> Server=5
+162670 Heartbeat Leader=1, Term=6 -> Server=4
+162671 Heartbeat Follower 6 收到来自Leader=0,Term=6的Heartbeat
+162671 Heartbeat Follower 3 收到来自Leader=1,Term=5的Heartbeat
+162672 Heartbeat Follower 5 收到来自Leader=1,Term=5的Heartbeat
+163020 VOTE Candidate 2, Term= 6向Server 3请求投票failed
+163827 VOTE Candidate 0, Term= 6向Server 1请求投票failed
+164289 VOTE Candidate 0, Term= 6向Server 2请求投票failed
+166485 VOTE Candidate 0, Term= 6向Server 1请求投票failed
+168737 INFO 距离上一次收到Leader的消息过去了:606 ms
+168737 INFO Follower 6准备发起选举
+168738 Candidate Candidate 6准备发起选举,Term=7
+168739 VOTE Candidate 6, Term= 7收到了来自Server 5,Term=7的投票,结果是true
+168739 VOTE Candidate 6, Term= 7持有2票
+168740 VOTE Candidate 6, Term= 7收到了来自Server 1,Term=7的投票,结果是true
+168741 VOTE Candidate 6, Term= 7持有3票
+168740 VOTE Candidate 6, Term= 7收到了来自Server 0,Term=7的投票,结果是true
+168741 LEAD 6成为了Leader,term=7
+168741 VOTE Candidate 6, Term= 7持有4票
+168741 Heartbeat Leader=6, Term=7 -> Server=5
+168741 Heartbeat Leader=6, Term=7 -> Server=1
+168740 VOTE Candidate 6, Term= 7收到了来自Server 3,Term=7的投票,结果是true
+168741 LEAD 6成为了Leader,term=7
+168741 VOTE Candidate 6, Term= 7持有5票
+168741 Heartbeat Leader=6, Term=7 -> Server=0
+168742 Heartbeat Leader=6, Term=7 -> Server=2
+168742 Heartbeat Leader=6, Term=7 -> Server=0
+168742 Heartbeat Leader=6, Term=7 -> Server=3
+168742 Heartbeat Leader=6, Term=7 -> Server=1
+168742 Heartbeat Follower 1 收到来自Leader=6,Term=7的Heartbeat
+168742 Heartbeat Follower 3 收到来自Leader=6,Term=7的Heartbeat
+168742 Heartbeat Follower 1 收到来自Leader=6,Term=7的Heartbeat
+168743 Heartbeat Leader=6, Term=7 -> Server=3
+168743 Heartbeat Leader=6, Term=7 -> Server=2
+168743 Heartbeat Leader=6, Term=7 -> Server=4
+168743 Heartbeat Leader=6, Term=7 -> Server=4
+168742 Heartbeat Follower 0 收到来自Leader=6,Term=7的Heartbeat
+168744 Heartbeat Follower 3 收到来自Leader=6,Term=7的Heartbeat
+168741 Heartbeat Follower 5 收到来自Leader=6,Term=7的Heartbeat
+168741 Heartbeat Leader=6, Term=7 -> Server=5
+168745 Heartbeat Follower 5 收到来自Leader=6,Term=7的Heartbeat
+168744 Heartbeat Follower 0 收到来自Leader=6,Term=7的Heartbeat
+169714 Heartbeat Leader=6, Term=7 -> Server=5
+169715 Heartbeat Leader=6, Term=7 -> Server=1
+169716 Heartbeat Leader=6, Term=7 -> Server=0
+169716 Heartbeat Leader=6, Term=7 -> Server=2
+169716 Heartbeat Leader=6, Term=7 -> Server=3
+169717 Heartbeat Follower 5 收到来自Leader=6,Term=7的Heartbeat
+169717 Heartbeat Follower 1 收到来自Leader=6,Term=7的Heartbeat
+169717 Heartbeat Follower 0 收到来自Leader=6,Term=7的Heartbeat
+169718 Heartbeat Follower 3 收到来自Leader=6,Term=7的Heartbeat
+169717 Heartbeat Leader=6, Term=7 -> Server=4
+170231 VOTE Candidate 0, Term= 7向Server 5请求投票failed
+170721 Heartbeat Leader=6, Term=7 -> Server=5
+170721 Heartbeat Leader=6, Term=7 -> Server=1
+170724 Heartbeat Follower 5 收到来自Leader=6,Term=7的Heartbeat
+170721 Heartbeat Leader=6, Term=7 -> Server=0
+170725 Heartbeat Follower 0 收到来自Leader=6,Term=7的Heartbeat
+170722 Heartbeat Leader=6, Term=7 -> Server=3
+170722 Heartbeat Leader=6, Term=7 -> Server=2
+170722 Heartbeat Leader=6, Term=7 -> Server=4
+170725 Heartbeat Follower 1 收到来自Leader=6,Term=7的Heartbeat
+170726 Heartbeat Follower 3 收到来自Leader=6,Term=7的Heartbeat
+171727 Heartbeat Leader=6, Term=7 -> Server=5
+171727 Heartbeat Leader=6, Term=7 -> Server=0
+171728 Heartbeat Leader=6, Term=7 -> Server=1
+171728 Heartbeat Leader=6, Term=7 -> Server=4
+171727 Heartbeat Leader=6, Term=7 -> Server=2
+171728 Heartbeat Leader=6, Term=7 -> Server=3
+171729 Heartbeat Follower 5 收到来自Leader=6,Term=7的Heartbeat
+171729 Heartbeat Follower 1 收到来自Leader=6,Term=7的Heartbeat
+171729 Heartbeat Follower 0 收到来自Leader=6,Term=7的Heartbeat
+171730 Heartbeat Follower 3 收到来自Leader=6,Term=7的Heartbeat
+172061 INFO 距离上一次收到Leader的消息过去了:976 ms
+172062 INFO Follower 2准备发起选举
+172062 Candidate Candidate 2准备发起选举,Term=7
+172739 Heartbeat Leader=6, Term=7 -> Server=5
+172740 Heartbeat Leader=6, Term=7 -> Server=0
+172740 Heartbeat Leader=6, Term=7 -> Server=4
+172741 Heartbeat Leader=6, Term=7 -> Server=1
+172741 Heartbeat Leader=6, Term=7 -> Server=3
+172741 Heartbeat Follower 0 收到来自Leader=6,Term=7的Heartbeat
+172740 Heartbeat Leader=6, Term=7 -> Server=2
+172741 Heartbeat Follower 4 收到来自Leader=6,Term=7的Heartbeat
+172742 Heartbeat Follower 3 收到来自Leader=6,Term=7的Heartbeat
+172742 Heartbeat Follower 5 收到来自Leader=6,Term=7的Heartbeat
+172742 Heartbeat Candidate 2 收到来自Leader=6,Term=7的Heartbeat
+172741 Heartbeat Follower 1 收到来自Leader=6,Term=7的Heartbeat
+172906 VOTE Candidate 2, Term= 7向Server 1请求投票failed
+173693 VOTE Candidate 1, Term= 7向Server 0请求投票failed
+173751 Heartbeat Leader=6, Term=7 -> Server=5
+173752 Heartbeat Leader=6, Term=7 -> Server=0
+173753 Heartbeat Follower 5 收到来自Leader=6,Term=7的Heartbeat
+173753 Heartbeat Follower 0 收到来自Leader=6,Term=7的Heartbeat
+173753 Heartbeat Leader=6, Term=7 -> Server=1
+173753 Heartbeat Leader=6, Term=7 -> Server=3
+173754 Heartbeat Follower 1 收到来自Leader=6,Term=7的Heartbeat
+173753 Heartbeat Leader=6, Term=7 -> Server=4
+173755 Heartbeat Follower 3 收到来自Leader=6,Term=7的Heartbeat
+173755 Heartbeat Follower 4 收到来自Leader=6,Term=7的Heartbeat
+173753 Heartbeat Leader=6, Term=7 -> Server=2
+173757 Heartbeat Follower 2 收到来自Leader=6,Term=7的Heartbeat
+174753 Heartbeat Leader=6, Term=7 -> Server=5
+174753 Heartbeat Leader=6, Term=7 -> Server=2
+174754 Heartbeat Leader=6, Term=7 -> Server=0
+174754 Heartbeat Leader=6, Term=7 -> Server=1
+174754 Heartbeat Leader=6, Term=7 -> Server=4
+174755 Heartbeat Follower 0 收到来自Leader=6,Term=7的Heartbeat
+174755 Heartbeat Follower 1 收到来自Leader=6,Term=7的Heartbeat
+174755 Heartbeat Follower 2 收到来自Leader=6,Term=7的Heartbeat
+174755 Heartbeat Follower 5 收到来自Leader=6,Term=7的Heartbeat
+174755 Heartbeat Leader=6, Term=7 -> Server=3
+174755 Heartbeat Follower 4 收到来自Leader=6,Term=7的Heartbeat
+174756 Heartbeat Follower 3 收到来自Leader=6,Term=7的Heartbeat
+175491 VOTE Candidate 1, Term= 7向Server 4请求投票failed
+175759 Heartbeat Leader=6, Term=7 -> Server=5
+175760 Heartbeat Leader=6, Term=7 -> Server=2
+175761 Heartbeat Leader=6, Term=7 -> Server=0
+175761 Heartbeat Leader=6, Term=7 -> Server=3
+175761 Heartbeat Follower 0 收到来自Leader=6,Term=7的Heartbeat
+175762 Heartbeat Leader=6, Term=7 -> Server=1
+175762 Heartbeat Leader=6, Term=7 -> Server=4
+175762 Heartbeat Follower 3 收到来自Leader=6,Term=7的Heartbeat
+175762 Heartbeat Follower 1 收到来自Leader=6,Term=7的Heartbeat
+175763 Heartbeat Follower 4 收到来自Leader=6,Term=7的Heartbeat
+175762 Heartbeat Follower 5 收到来自Leader=6,Term=7的Heartbeat
+175762 Heartbeat Follower 2 收到来自Leader=6,Term=7的Heartbeat
+176765 Heartbeat Leader=6, Term=7 -> Server=5
+176765 Heartbeat Leader=6, Term=7 -> Server=2
+176766 Heartbeat Leader=6, Term=7 -> Server=0
+176766 Heartbeat Follower 5 收到来自Leader=6,Term=7的Heartbeat
+176766 Heartbeat Leader=6, Term=7 -> Server=3
+176766 Heartbeat Leader=6, Term=7 -> Server=4
+176766 Heartbeat Follower 2 收到来自Leader=6,Term=7的Heartbeat
+176766 Heartbeat Leader=6, Term=7 -> Server=1
+176767 Heartbeat Follower 0 收到来自Leader=6,Term=7的Heartbeat
+176767 Heartbeat Follower 3 收到来自Leader=6,Term=7的Heartbeat
+176767 Heartbeat Follower 4 收到来自Leader=6,Term=7的Heartbeat
+176768 Heartbeat Follower 1 收到来自Leader=6,Term=7的Heartbeat
+  ... Passed --   7.4  7  516   83824    0
+PASS
+ok  	6.5840/raft	17.742s
