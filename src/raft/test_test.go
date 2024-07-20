@@ -338,8 +338,11 @@ func TestFailNoAgree3B(t *testing.T) {
 	// 3 of 5 followers disconnect
 	leader := cfg.checkOneLeader()
 	cfg.disconnect((leader + 1) % servers)
+	Debug(dInfo, "断开Server %v的连接", (leader+1)%servers)
 	cfg.disconnect((leader + 2) % servers)
+	Debug(dInfo, "断开Server %v的连接", (leader+2)%servers)
 	cfg.disconnect((leader + 3) % servers)
+	Debug(dInfo, "断开Server %v的连接", (leader+3)%servers)
 
 	index, _, ok := cfg.rafts[leader].Start(20)
 	if ok != true {
@@ -358,8 +361,11 @@ func TestFailNoAgree3B(t *testing.T) {
 
 	// repair
 	cfg.connect((leader + 1) % servers)
+	Debug(dInfo, "恢复Server %v的连接", (leader+1)%servers)
 	cfg.connect((leader + 2) % servers)
+	Debug(dInfo, "恢复Server %v的连接", (leader+2)%servers)
 	cfg.connect((leader + 3) % servers)
+	Debug(dInfo, "恢复Server %v的连接", (leader+3)%servers)
 
 	// the disconnected majority may have chosen a leader from
 	// among their own ranks, forgetting index 2.
