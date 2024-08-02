@@ -866,6 +866,7 @@ func TestFigure83C(t *testing.T) {
 		if leader != -1 {
 			cfg.crash1(leader)
 			nup -= 1
+			Debug(dLeader, "Leader %v断开连接", leader)
 		}
 
 		if nup < 3 {
@@ -873,6 +874,7 @@ func TestFigure83C(t *testing.T) {
 			if cfg.rafts[s] == nil {
 				cfg.start1(s, cfg.applier)
 				cfg.connect(s)
+				Debug(dInfo, "Server %v加入连接", s)
 				nup += 1
 			}
 		}
