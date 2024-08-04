@@ -200,57 +200,47 @@ type AppendEntryReply struct {
 
 // example RequestVote RPC handler.
 func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
-	// Your code here (3A, 3B).
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
-	// fmt.Printf("Follower: %v开始处理来自Candidate: %v的投票请求\n", rf.me, args.CandidateId)
 
+	// Initialize reply
 	reply.VoteGranted = false
 	reply.FollowerTerm = rf.currentTerm
 
-	//发出投票请求的candidate比自己还要小,拒绝投票
+	Debug(dInfo, "Server %v,Term=%v的voteFor=%v", rf.me, rf.currentTerm, rf.voteFor)
+
+	// If the candidate's term is less than current term, reject the vote
 	if args.CandidateTerm < rf.currentTerm {
 		return
 	}
-	//加强条件，不能有任何漏网之鱼
-	if args.CandidateTerm == rf.currentTerm && rf.voteFor != -1 {
-		return
-	}
-	//如果Candidate的Term大于当前currentTerm才准备投票
+
+	// If the candidate's term is greater than current term, update term and convert to follower
 	if args.CandidateTerm > rf.currentTerm {
 		rf.currentTerm = args.CandidateTerm
 		rf.voteFor = -1
+		rf.persist()
 		rf.serverType = "Follower"
-		rf.persist() //持久化记录
 	}
 
-	//这里不可以直接使用rf.lastLogTerm
+	// Check if this server has already voted for someone else in the same term
+	if rf.voteFor != -1 && rf.voteFor != args.CandidateId {
+		return
+	}
+
+	// Check candidate's log term and index to decide whether to grant vote
 	logLength := len(rf.log)
-	if rf.voteFor == -1 {
-		if args.LastLogTerm > rf.log[logLength-1].Term {
-			rf.voteFor = args.CandidateId
-			rf.persist() //持久化记录	居然漏掉了这里
-			rf.lastMsgFromLeader = time.Now()
-			reply.FollowerTerm = rf.currentTerm
-			reply.VoteGranted = true
-		} else if args.LastLogTerm == rf.log[logLength-1].Term && args.LastLogIndex >= logLength-1 {
-			rf.voteFor = args.CandidateId
-			rf.persist() //持久化记录
-			rf.lastMsgFromLeader = time.Now()
-			reply.FollowerTerm = rf.currentTerm
-			reply.VoteGranted = true
-		}
+	lastLogTerm := rf.log[logLength-1].Term
+	lastLogIndex := logLength - 1
+
+	if args.LastLogTerm > lastLogTerm || (args.LastLogTerm == lastLogTerm && args.LastLogIndex >= lastLogIndex) {
+		// Grant vote
+		rf.voteFor = args.CandidateId
+		rf.persist()
+		rf.lastMsgFromLeader = time.Now()
+		reply.FollowerTerm = rf.currentTerm
+		reply.VoteGranted = true
+		Debug(dVote, "Server %v, Term=%v给%v进行投票了", rf.me, rf.currentTerm, args.CandidateId)
 	}
-
-	// if rf.voteFor == args.CandidateId { //说明同一个Candidate因为网络问题发送了好几个投票请求
-	// 	reply.FollowerTerm = rf.currentTerm
-	// 	reply.VoteGranted = true //只投一次票
-	// 	// fmt.Printf("Follower:%v给Candidate:%v投票了\n", rf.me, args.CandidateId)
-	// } else {
-	// 	reply.FollowerTerm = rf.currentTerm
-	// 	reply.VoteGranted = false
-	// }
-
 }
 
 // example code to send a RequestVote RPC to a server.
@@ -516,7 +506,7 @@ func (rf *Raft) HeartBeat(args *AppendEntryArgs, reply *AppendEntryReply) {
 
 	rf.currentTerm = args.LeaderTerm
 	rf.serverType = "Follower"
-	rf.voteFor = -1
+	// rf.voteFor = -1			//这句话有大问题，可能导致某个服务器在一个Term中重复投票！！！
 	rf.voteCount = 0
 	rf.persist() //持久化记录
 
@@ -553,6 +543,11 @@ func (rf *Raft) sendHeartBeat() {
 	for serverId := range rf.peers {
 		if serverId != rf.me && rf.serverType == "Leader" {
 			go func(i int) {
+				//添加错误检查
+				if rf.nextIndex[i] <= 0 || rf.nextIndex[i] > len(rf.log) {
+					Debug(dError, "sendHeartBeat: rf.nextIndex[%d] out of range, rf.nextIndex[%d] = %d, len(rf.log) = %d", i, i, rf.nextIndex[i], len(rf.log))
+					return
+				}
 				argsAppendEntry := &AppendEntryArgs{
 					LeaderTerm:   currentTermConst,
 					LeaderId:     rf.me,
