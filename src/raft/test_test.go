@@ -1241,12 +1241,14 @@ func TestSnapshotAllCrash3D(t *testing.T) {
 		// crash all
 		for i := 0; i < servers; i++ {
 			cfg.crash1(i)
+			Debug(dInfo, "Server %v发生了crash", i)
 		}
 
 		// revive all
 		for i := 0; i < servers; i++ {
 			cfg.start1(i, cfg.applierSnap)
 			cfg.connect(i)
+			Debug(dInfo, "Server %v重新恢复", i)
 		}
 
 		index2 := cfg.one(rand.Int(), servers, true)
