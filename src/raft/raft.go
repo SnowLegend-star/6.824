@@ -44,6 +44,7 @@ type ApplyMsg struct {
 	CommandValid bool
 	Command      interface{}
 	CommandIndex int
+	CommandTerm  int
 
 	// For 3D:
 	SnapshotValid bool
@@ -121,7 +122,7 @@ func max(a, b int) int {
 
 // return currentTerm and whether this server
 // believes it is the leader.
-func (rf *Raft) GetState() (int, bool) { //西巴，这里是State啊？！我给看成Start了
+func (rf *Raft) GetState() (int, bool) {
 
 	var term int
 	var isleader bool
@@ -544,9 +545,10 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	isLeader := true
 
 	rf.mu.Lock()
-	defer rf.mu.Unlock()
+	// defer rf.mu.Unlock()
 	// Your code here (3B).
 	if rf.serverType != "Leader" {
+		rf.mu.Unlock()
 		return index, term, false
 	}
 
@@ -560,7 +562,8 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	if len(rf.log) != 1 {
 		Debug(dAppendEntry, "Leader=%v, Term= %v的日志为: %v", rf.me, rf.currentTerm, rf.log)
 	}
-
+	rf.mu.Unlock()
+	rf.sendHeartBeat()
 	return index, term, isLeader
 }
 
@@ -901,10 +904,15 @@ func (rf *Raft) applier() {
 				CommandValid: true,
 				Command:      rf.log[rf.ResetIndex(rf.lastApplied)].Entry,
 				CommandIndex: rf.lastApplied,
+				CommandTerm:  rf.log[rf.ResetIndex(rf.lastApplied)].Term,
 			}
 		}
 		rf.mu.Unlock()
 		if msg.CommandValid {
+			if rf.serverType == "Leader" {
+				Debug(dLog2, "Leader %v准备向kvraft提交OP %v", rf.me, msg.Command)
+			}
+
 			rf.applyCh <- msg
 			msg.CommandValid = false
 		}

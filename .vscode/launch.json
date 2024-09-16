@@ -14,7 +14,7 @@
             "mode": "auto",
             // "program": "${workspaceFolder}/src/main/mrcoordinator.go",
             // "program": "${workspaceFolder}/src/main/mrworker.go",
-            "program": "${workspaceFolder}/src/raft/test_test.go",
+            "program": "${workspaceFolder}/src/kvraft/test_test.go",
             "args": [
                 // "wc.so",
                 // "pg-grimm.txt",

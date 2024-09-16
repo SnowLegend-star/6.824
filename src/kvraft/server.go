@@ -1,12 +1,14 @@
 package kvraft
 
 import (
-	"6.5840/labgob"
-	"6.5840/labrpc"
-	"6.5840/raft"
 	"log"
 	"sync"
 	"sync/atomic"
+	"time"
+
+	"6.5840/labgob"
+	"6.5840/labrpc"
+	"6.5840/raft"
 )
 
 const Debug = false
@@ -18,11 +20,15 @@ func DPrintf(format string, a ...interface{}) (n int, err error) {
 	return
 }
 
-
 type Op struct {
 	// Your definitions here.
 	// Field names must start with capital letters,
 	// otherwise RPC will break.
+
+	OpType       string //操作的类型
+	OpKey        string
+	OpValue      string
+	OpIdentifier int64
 }
 
 type KVServer struct {
@@ -35,19 +41,113 @@ type KVServer struct {
 	maxraftstate int // snapshot if log grows this big
 
 	// Your definitions here.
+	// kvStorage       map[string]string           //本地存储
+	kvMachine kvDatabase
+
+	reslutCh map[int]chan ResultFromRaft //用来接收来自raft内容的channel数组 用index和channel进行匹配
 }
 
+type ResultFromRaft struct {
+	value string
+	Err   Err
+}
 
 func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	// Your code here.
+
+	opKey := args.Key
+	opIdentifier := args.Identifier
+	operation := Op{OpType: "Get",
+		OpKey:        opKey,
+		OpIdentifier: opIdentifier,
+	}
+
+	index, _, isLeader := kv.rf.Start(operation)
+	if !isLeader {
+		reply.Err = ErrWrongLeader
+		return
+	}
+	DPrintf("kvserver %v收到了op: %v id=%v", kv.me, operation, args.Identifier)
+	//这个请求已经完成就直接返回
+	kv.mu.Lock()
+	if kv.kvMachine.KvrequestComplete[args.Identifier] {
+		reply.Value = kv.kvMachine.kvStorage[args.Key]
+		reply.Err = OK
+		kv.mu.Unlock()
+		return
+	}
+	kv.mu.Unlock()
+	result := kv.waitForResult(index)
+	DPrintf("kvserver %v处理op: %v id=%v的结果是%v", kv.me, operation, args.Identifier, result.Err)
+	reply.Value = result.value
+	reply.Err = result.Err
+
+	// if result.Err != ErrTimeout {
+	// 	kv.mu.Lock()
+	// 	kv.kvMachine.KvrequestComplete[args.Identifier] = true
+	// 	DPrintf("kvserver %v记录op: %v id=%v", kv.me, operation, args.Identifier)
+	// 	kv.mu.Unlock()
+	// }
+
+	go func() {
+		kv.mu.Lock()
+		delete(kv.reslutCh, index)
+		kv.mu.Unlock()
+	}()
+
+}
+
+func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
+	opkey := args.Key
+	opValue := args.Value
+	opIdentifier := args.Identifier
+	operation := Op{OpType: args.OperationType,
+		OpKey:        opkey,
+		OpValue:      opValue,
+		OpIdentifier: opIdentifier,
+	}
+
+	index, _, isLeader := kv.rf.Start(operation)
+	if !isLeader {
+		reply.Err = ErrWrongLeader
+		return
+	}
+
+	DPrintf("kvserver %v收到了op: %v id=%v", kv.me, operation, args.Identifier)
+	kv.mu.Lock()
+	if kv.kvMachine.KvrequestComplete[args.Identifier] {
+		reply.Err = OK
+		kv.mu.Unlock()
+		return
+	}
+	kv.mu.Unlock()
+
+	result := kv.waitForResult(index)
+	DPrintf("kvserver %v处理op: %v id=%v的结果是%v", kv.me, operation, args.Identifier, result.Err)
+	reply.Err = result.Err
+
+	// if result.Err == OK {
+	// 	kv.mu.Lock()
+	// 	kv.kvMachine.KvrequestComplete[args.Identifier] = true
+	// 	DPrintf("kv.kvMachine.KvrequestComplete[%v]=%v", args.Identifier, kv.kvMachine.KvrequestComplete[args.Identifier])
+	// 	kv.mu.Unlock()
+	// }
+
+	go func() {
+		kv.mu.Lock()
+		delete(kv.reslutCh, index)
+		kv.mu.Unlock()
+	}()
 }
 
 func (kv *KVServer) Put(args *PutAppendArgs, reply *PutAppendReply) {
 	// Your code here.
+	kv.PutAppend(args, reply)
 }
 
 func (kv *KVServer) Append(args *PutAppendArgs, reply *PutAppendReply) {
 	// Your code here.
+	kv.PutAppend(args, reply)
 }
 
 // the tester calls Kill() when a KVServer instance won't
@@ -94,8 +194,89 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 
 	kv.applyCh = make(chan raft.ApplyMsg)
 	kv.rf = raft.Make(servers, me, persister, kv.applyCh)
-
+	kv.kvMachine = *newKVMachine()
+	kv.reslutCh = make(map[int]chan ResultFromRaft)
 	// You may need initialization code here.
-
+	go kv.applier()
 	return kv
+}
+
+func (kv *KVServer) waitForResult(indexOld int) ResultFromRaft {
+	kv.mu.Lock()
+
+	//如果没有这个Ch就创建一个
+	if _, ok := kv.reslutCh[indexOld]; !ok {
+		kv.reslutCh[indexOld] = make(chan ResultFromRaft)
+	}
+	waitCh := kv.reslutCh[indexOld]
+	kv.mu.Unlock()
+
+	select {
+	case result := <-waitCh:
+		return result
+	case <-time.After(time.Millisecond * 1000):
+		return ResultFromRaft{Err: ErrTimeout}
+	}
+
+}
+
+func (kv *KVServer) applier() {
+
+	for !kv.killed() {
+		// var msg raft.ApplyMsg
+		select {
+		case msg := <-kv.applyCh:
+			op, ok := msg.Command.(Op) //将command重新转化为Op格式的内容
+			if !ok {
+				DPrintf("command转化为Op失败")
+			}
+			kv.mu.Lock()
+
+			//如果这个命令已经过时了，直接丢弃
+			if term, isLeader := kv.rf.GetState(); !isLeader || term != msg.CommandTerm {
+				kv.mu.Unlock()
+				continue
+			}
+			//如果这个op已经被操作过了，忽略
+			DPrintf("这条msg: %v被记录过了吗%v?", msg, kv.kvMachine.KvrequestComplete[op.OpIdentifier])
+			if kv.kvMachine.KvrequestComplete[op.OpIdentifier] {
+				kv.mu.Unlock()
+				continue
+			}
+			DPrintf("kvserver %v收到从raft提交的msg: %v", kv.me, msg)
+			// DPrintf("kvserver %v应用msg之前的kvstorage的内容如下: %v", kv.me, kv.kvStorage)
+			var res ResultFromRaft
+			if op.OpType == "Get" {
+				res.value = kv.kvMachine.kvStorage[op.OpKey]
+				if res.value == "" {
+					res.Err = ErrNoKey
+				} else {
+					res.Err = OK
+				}
+			} else if op.OpType == "Put" {
+				kv.kvMachine.kvStorage[op.OpKey] = op.OpValue
+				res.Err = OK
+			} else if op.OpType == "Append" {
+				// 检查键是否存在
+				if oldValue, exists := kv.kvMachine.kvStorage[op.OpKey]; exists {
+					// 如果键存在，进行拼接操作
+					kv.kvMachine.kvStorage[op.OpKey] = oldValue + op.OpValue
+				} else {
+					// 如果键不存在，初始化该键的值为 op.OpValue
+					kv.kvMachine.kvStorage[op.OpKey] = op.OpValue
+				}
+				res.Err = OK
+			}
+			kv.kvMachine.KvrequestComplete[op.OpIdentifier] = true
+			DPrintf("kvserver %v记录op: %v id=%v", kv.me, op, op.OpIdentifier)
+			DPrintf("kvserver %v应用msg之后的kvstorage的内容如下: %v", kv.me, kv.kvMachine.kvStorage)
+			kv.mu.Unlock()
+
+			//处理完结果准备放入resultCh
+			if ch, ok := kv.reslutCh[msg.CommandIndex]; ok {
+				ch <- res
+			}
+		}
+	}
+
 }
