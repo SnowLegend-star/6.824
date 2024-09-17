@@ -29,6 +29,7 @@ type Op struct {
 	OpKey        string
 	OpValue      string
 	OpIdentifier int64
+	OpIndex      int //这个op的序列号
 }
 
 type KVServer struct {
@@ -42,14 +43,22 @@ type KVServer struct {
 
 	// Your definitions here.
 	// kvStorage       map[string]string           //本地存储
-	kvMachine kvDatabase
-
-	reslutCh map[int]chan ResultFromRaft //用来接收来自raft内容的channel数组 用index和channel进行匹配
+	kvMachine       kvDatabase
+	opAppliedMax    int                         //当前kvserver已经应用的op的序号最大值
+	reslutCh        map[int]chan ResultFromRaft //用来接收来自raft内容的channel数组 用index和channel进行匹配
+	requestComplete map[int64]int               //记录op是否完成
 }
 
 type ResultFromRaft struct {
 	value string
 	Err   Err
+}
+
+func (kv *KVServer) isRepetitive(commandId int64) bool {
+	if tmp, exists := kv.requestComplete[commandId]; exists {
+		return tmp <= kv.opAppliedMax
+	}
+	return false
 }
 
 func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
@@ -60,6 +69,7 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	operation := Op{OpType: "Get",
 		OpKey:        opKey,
 		OpIdentifier: opIdentifier,
+		OpIndex:      args.CommandId,
 	}
 
 	index, _, isLeader := kv.rf.Start(operation)
@@ -70,7 +80,7 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	DPrintf("kvserver %v收到了op: %v id=%v", kv.me, operation, args.Identifier)
 	//这个请求已经完成就直接返回
 	kv.mu.Lock()
-	if kv.kvMachine.KvrequestComplete[args.Identifier] {
+	if kv.isRepetitive(args.Identifier) {
 		reply.Value = kv.kvMachine.kvStorage[args.Key]
 		reply.Err = OK
 		kv.mu.Unlock()
@@ -81,13 +91,6 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	DPrintf("kvserver %v处理op: %v id=%v的结果是%v", kv.me, operation, args.Identifier, result.Err)
 	reply.Value = result.value
 	reply.Err = result.Err
-
-	// if result.Err != ErrTimeout {
-	// 	kv.mu.Lock()
-	// 	kv.kvMachine.KvrequestComplete[args.Identifier] = true
-	// 	DPrintf("kvserver %v记录op: %v id=%v", kv.me, operation, args.Identifier)
-	// 	kv.mu.Unlock()
-	// }
 
 	go func() {
 		kv.mu.Lock()
@@ -105,6 +108,7 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 		OpKey:        opkey,
 		OpValue:      opValue,
 		OpIdentifier: opIdentifier,
+		OpIndex:      args.CommandId,
 	}
 
 	index, _, isLeader := kv.rf.Start(operation)
@@ -115,23 +119,18 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 
 	DPrintf("kvserver %v收到了op: %v id=%v", kv.me, operation, args.Identifier)
 	kv.mu.Lock()
-	if kv.kvMachine.KvrequestComplete[args.Identifier] {
+	if kv.isRepetitive(args.Identifier) {
+		DPrintf("kvserver %v已经记录这条op了: %v", kv.me, args.Identifier)
 		reply.Err = OK
 		kv.mu.Unlock()
 		return
 	}
 	kv.mu.Unlock()
 
+	DPrintf("kvserver %v等待处理这条op: %v", kv.me, args.Identifier)
 	result := kv.waitForResult(index)
 	DPrintf("kvserver %v处理op: %v id=%v的结果是%v", kv.me, operation, args.Identifier, result.Err)
 	reply.Err = result.Err
-
-	// if result.Err == OK {
-	// 	kv.mu.Lock()
-	// 	kv.kvMachine.KvrequestComplete[args.Identifier] = true
-	// 	DPrintf("kv.kvMachine.KvrequestComplete[%v]=%v", args.Identifier, kv.kvMachine.KvrequestComplete[args.Identifier])
-	// 	kv.mu.Unlock()
-	// }
 
 	go func() {
 		kv.mu.Lock()
@@ -196,6 +195,8 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 	kv.rf = raft.Make(servers, me, persister, kv.applyCh)
 	kv.kvMachine = *newKVMachine()
 	kv.reslutCh = make(map[int]chan ResultFromRaft)
+	kv.opAppliedMax = 0
+	kv.requestComplete = make(map[int64]int)
 	// You may need initialization code here.
 	go kv.applier()
 	return kv
@@ -232,50 +233,63 @@ func (kv *KVServer) applier() {
 			}
 			kv.mu.Lock()
 
-			//如果这个命令已经过时了，直接丢弃
-			if term, isLeader := kv.rf.GetState(); !isLeader || term != msg.CommandTerm {
+			// //如果这个op已经被操作过了，忽略
+			// DPrintf("这条msg: %v被记录过了吗%v?", msg, kv.requestComplete[op.OpIdentifier])
+			if kv.isRepetitive(op.OpIdentifier) {
+				DPrintf("kvserver %v已经记录这条op了: %v", kv.me, op.OpIdentifier)
 				kv.mu.Unlock()
 				continue
 			}
-			//如果这个op已经被操作过了，忽略
-			DPrintf("这条msg: %v被记录过了吗%v?", msg, kv.kvMachine.KvrequestComplete[op.OpIdentifier])
-			if kv.kvMachine.KvrequestComplete[op.OpIdentifier] {
+
+			DPrintf("这条msg: %v的序列号为: %v ,当前kvserver %v的最大序列号为: %v", msg, op.OpIndex, kv.me, kv.opAppliedMax)
+			//如果op的序列号小于当前kvserver已经应用的最大序列号
+			if msg.CommandIndex <= kv.opAppliedMax && kv.opAppliedMax != 0 {
 				kv.mu.Unlock()
 				continue
 			}
+			kv.opAppliedMax = msg.CommandIndex
 			DPrintf("kvserver %v收到从raft提交的msg: %v", kv.me, msg)
-			// DPrintf("kvserver %v应用msg之前的kvstorage的内容如下: %v", kv.me, kv.kvStorage)
 			var res ResultFromRaft
 			if op.OpType == "Get" {
+				//如果这个命令已经过时了，直接丢弃 只是针对于Get()
+				if term, isLeader := kv.rf.GetState(); !isLeader || term != msg.CommandTerm {
+					kv.mu.Unlock() //真的是被lock烦死了
+					continue
+				}
 				res.value = kv.kvMachine.kvStorage[op.OpKey]
 				if res.value == "" {
 					res.Err = ErrNoKey
 				} else {
 					res.Err = OK
 				}
-			} else if op.OpType == "Put" {
-				kv.kvMachine.kvStorage[op.OpKey] = op.OpValue
-				res.Err = OK
-			} else if op.OpType == "Append" {
-				// 检查键是否存在
-				if oldValue, exists := kv.kvMachine.kvStorage[op.OpKey]; exists {
-					// 如果键存在，进行拼接操作
-					kv.kvMachine.kvStorage[op.OpKey] = oldValue + op.OpValue
-				} else {
-					// 如果键不存在，初始化该键的值为 op.OpValue
+			} else {
+				if op.OpType == "Put" {
 					kv.kvMachine.kvStorage[op.OpKey] = op.OpValue
+					res.Err = OK
 				}
-				res.Err = OK
+				if op.OpType == "Append" {
+					if oldValue, exists := kv.kvMachine.kvStorage[op.OpKey]; exists {
+						kv.kvMachine.kvStorage[op.OpKey] = oldValue + op.OpValue
+					} else {
+						kv.kvMachine.kvStorage[op.OpKey] = op.OpValue
+					}
+					res.Err = OK
+				}
 			}
-			kv.kvMachine.KvrequestComplete[op.OpIdentifier] = true
-			DPrintf("kvserver %v记录op: %v id=%v", kv.me, op, op.OpIdentifier)
+
+			kv.requestComplete[op.OpIdentifier] = msg.CommandIndex
+
+			// DPrintf("kvserver %v记录op: %v id=%v", kv.me, op, op.OpIdentifier)
 			DPrintf("kvserver %v应用msg之后的kvstorage的内容如下: %v", kv.me, kv.kvMachine.kvStorage)
 			kv.mu.Unlock()
 
-			//处理完结果准备放入resultCh
-			if ch, ok := kv.reslutCh[msg.CommandIndex]; ok {
-				ch <- res
+			//处理完结果准备放入resultCh 其实就是针对Put/Append。能到这里的Get()都是经过考验的
+			if _, isLeader := kv.rf.GetState(); isLeader {
+				if ch, ok := kv.reslutCh[msg.CommandIndex]; ok {
+					ch <- res
+				}
 			}
+
 		}
 	}
 

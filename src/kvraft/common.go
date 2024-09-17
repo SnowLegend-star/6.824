@@ -18,6 +18,7 @@ type PutAppendArgs struct {
 	// otherwise RPC will break.
 	Identifier    int64
 	OperationType string
+	CommandId     int
 }
 
 type PutAppendReply struct {
@@ -28,6 +29,7 @@ type GetArgs struct {
 	Key string
 	// You'll have to add definitions here.
 	Identifier int64
+	CommandId  int
 }
 
 type GetReply struct {

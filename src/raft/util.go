@@ -59,9 +59,9 @@ func init() {
 func Debug(topic logTopic, format string, a ...interface{}) {
 	if debugVerbosity >= 1 {
 
-		// if topic == dLog {
-		// 	return
-		// }
+		if topic == dLog {
+			return
+		}
 
 		time := time.Since(debugStart).Microseconds()
 		time /= 100

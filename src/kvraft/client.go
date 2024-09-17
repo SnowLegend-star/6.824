@@ -11,6 +11,7 @@ type Clerk struct {
 	servers []*labrpc.ClientEnd
 	// You will have to modify this struct.
 	identifier []int64 //每个请求的标识符集合
+	commandId  int     //记录这个op的Id
 	lastLeader int     //记录上一次RPC的Leader
 }
 
@@ -27,6 +28,7 @@ func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	// You'll have to add code here.
 	ck.identifier = make([]int64, 0)
 	ck.lastLeader = 0 //默认初始化lastLeader是0
+	ck.commandId = 0
 	return ck
 }
 
@@ -52,8 +54,11 @@ func (ck *Clerk) Get(key string) string {
 			Identifier: id,
 		}
 		reply := GetReply{}
-		// DPrintf("Clerk准备发送Get():%v key:%v ->kvserver %v", key, args, i)
+		DPrintf("Clerk准备发送Get():%v key:%v ->kvserver %v", key, args, i)
 		ok := ck.servers[i].Call("KVServer.Get", &args, &reply)
+		if !ok {
+			DPrintf("Clerk发送Get():%v ->kvserver %v失败", args, i)
+		}
 		if ok {
 
 			// if reply.Err != ErrWrongLeader {
@@ -63,6 +68,7 @@ func (ck *Clerk) Get(key string) string {
 			if reply.Err == OK {
 				DPrintf("Clerk成功收到了Get(): %v", reply)
 				ck.lastLeader = i
+				ck.commandId++
 				return reply.Value
 			} else if reply.Err == ErrNoKey {
 				return ""
@@ -99,21 +105,21 @@ func (ck *Clerk) PutAppend(key string, value string, op string) {
 			OperationType: op,
 		}
 		reply := PutAppendReply{}
-		// DPrintf("Clerk准备发送%v():%v key:%v value:%v ->kvserver %v", op, key, value, args, i)
+		DPrintf("Clerk准备发送%v():%v key:%v value:%v ->kvserver %v", op, key, value, args, i)
 		ok := ck.servers[i].Call("KVServer.PutAppend", &args, &reply)
-		// if !ok {
-		// 	DPrintf("Clerk发送%v():%v ->kvserver %v失败", op, args, i)
-		// }
+		if !ok {
+			DPrintf("Clerk发送%v():%v ->kvserver %v失败", op, args, i)
+		}
 
 		if ok {
 
 			if reply.Err == OK {
 				DPrintf("Clerk成功收到了%v(): %v", args, reply)
 				ck.lastLeader = i
+				ck.commandId++
 				return
 			} else if reply.Err == ErrWrongLeader || reply.Err == ErrTimeout {
 				i = (i + 1) % len(ck.servers)
-
 				continue
 			}
 		}
