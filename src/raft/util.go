@@ -59,7 +59,7 @@ func init() {
 func Debug(topic logTopic, format string, a ...interface{}) {
 	if debugVerbosity >= 1 {
 
-		if topic == dLog {
+		if topic == dLog || topic == dInfo {
 			return
 		}
 

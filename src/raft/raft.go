@@ -93,6 +93,10 @@ type Raft struct {
 	logLength         int //用这个来反映Log的最大index
 }
 
+func (rf *Raft) GetRaftStateSize() int {
+	return rf.persister.RaftStateSize()
+}
+
 // 重新设置index
 // 在index=0存snapshot的状态
 func (rf *Raft) ResetIndex(index int) int {
@@ -239,7 +243,7 @@ type SnapshotReply struct {
 
 // Leader发送snapshot
 func (rf *Raft) sendSnapshot(serverId int, args SnapshotArgs) {
-
+	Debug(dSnap, "Leader %v向Server %v发送snapshot", rf.me, serverId)
 	reply := SnapshotReply{}
 	ok := rf.peers[serverId].Call("Raft.InstallSnapshot", &args, &reply)
 
@@ -247,6 +251,7 @@ func (rf *Raft) sendSnapshot(serverId int, args SnapshotArgs) {
 		Debug(dError, "Leader %v向Server %v发送snapshot失败", rf.me, serverId)
 		return
 	}
+	Debug(dSnap, "Leader %v向Server %v发送snapshot成功", rf.me, serverId)
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 	//任期过期
@@ -280,7 +285,7 @@ func (rf *Raft) InstallSnapshot(args *SnapshotArgs, reply *SnapshotReply) {
 	}
 
 	if rf.currentTerm < args.LeaderTerm {
-		rf.currentTerm = args.LeaderId
+		rf.currentTerm = args.LeaderTerm
 		rf.persist()
 		rf.serverType = "Follower"
 	}
@@ -291,6 +296,12 @@ func (rf *Raft) InstallSnapshot(args *SnapshotArgs, reply *SnapshotReply) {
 	if rf.lastIncludedIndex == args.LastIncludedIndex &&
 		// (rf.logLength-1) >= args.LastIncludedIndex &&
 		rf.log[rf.ResetIndex(rf.lastIncludedIndex)].Term == args.LastIncludedTerm {
+		return
+	}
+
+	//如果Follower当前的snapshot比Leader发送来的snapshot更新呢？
+	if rf.ResetIndex(args.LastIncludedIndex) < 0 {
+		Debug(dError, "Follower当前的snapshot比Leader发送来的snapshot更新")
 		return
 	}
 
@@ -629,6 +640,14 @@ func (rf *Raft) HeartBeat(args *AppendEntryArgs, reply *AppendEntryReply) {
 		return
 	}
 
+	//Follower的snapshot已经应用了，但是还是收到旧的心跳信息
+	if rf.ResetIndex(args.PrevLogIndex) < 0 {
+		Debug(dInfo, "Server %v的lastIncludedIndex=%v, args.PrevLogIndex=%v", rf.me, rf.lastIncludedIndex, args.PrevLogIndex)
+		reply.Success = true
+		reply.FollowerTerm = rf.currentTerm
+		return
+	}
+
 	//一个条件不满足就是不匹配
 	if !(rf.log[rf.ResetIndex(args.PrevLogIndex)].Term == args.PrevLogTerm && (rf.log[rf.ResetIndex(args.PrevLogIndex)].Entry == args.EntryTmp.Entry || args.EntryTmp.Entry == "Too long")) {
 		//snapshot的command部分是nil, 要排除在外
@@ -722,6 +741,7 @@ func (rf *Raft) sendHeartBeatHandler(serverId int, argsAppendEntry *AppendEntryA
 				if rf.ResetIndex(index) < 0 {
 					Debug(dInfo, "commitIndex=%v, lastApplied=%v", rf.commitIndex, rf.lastApplied)
 					Debug(dError, "在sendHeartBeat()中, Leader %v的logLength=%v, lastIncludedIndex=%v, index=%v", rf.me, rf.logLength, rf.lastIncludedIndex, index)
+					break
 				}
 
 				if count > len(rf.peers)/2 && rf.log[rf.ResetIndex(index)].Term == rf.currentTerm {
@@ -820,6 +840,7 @@ func (rf *Raft) sendHeartBeat() {
 
 				//判断是否需要发送snapshot
 				if legalState[i] == -1 {
+					rf.mu.Lock()
 					argsSnapshot := SnapshotArgs{
 						LeaderId:          rf.me,
 						LeaderTerm:        currentTermConst,
@@ -827,8 +848,9 @@ func (rf *Raft) sendHeartBeat() {
 						LastIncludedTerm:  rf.log[rf.ResetIndex(rf.lastIncludedIndex)].Term,
 						SnapshotData:      rf.snapshotData,
 					}
-
+					rf.mu.Unlock()
 					go rf.sendSnapshot(i, argsSnapshot)
+					// rf.sendSnapshot(i, argsSnapshot)
 					return
 				}
 

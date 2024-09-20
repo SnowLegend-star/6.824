@@ -10,9 +10,9 @@ import (
 type Clerk struct {
 	servers []*labrpc.ClientEnd
 	// You will have to modify this struct.
-	identifier []int64 //每个请求的标识符集合
-	commandId  int     //记录这个op的Id
-	lastLeader int     //记录上一次RPC的Leader
+	clientId     int64 //每个Client的编号
+	commandIndex int   //记录这个op的index
+	lastLeader   int   //记录上一次RPC的Leader
 }
 
 func nrand() int64 {
@@ -26,9 +26,9 @@ func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	ck := new(Clerk)
 	ck.servers = servers
 	// You'll have to add code here.
-	ck.identifier = make([]int64, 0)
+	ck.clientId = nrand()
 	ck.lastLeader = 0 //默认初始化lastLeader是0
-	ck.commandId = 0
+	ck.commandIndex = 0
 	return ck
 }
 
@@ -45,13 +45,13 @@ func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 func (ck *Clerk) Get(key string) string {
 
 	// You will have to modify this function.
-	id := nrand()
 
 	i := ck.lastLeader
 	for {
 		args := GetArgs{
-			Key:        key,
-			Identifier: id,
+			Key:          key,
+			ClientId:     ck.clientId,
+			CommandIndex: ck.commandIndex,
 		}
 		reply := GetReply{}
 		DPrintf("Clerk准备发送Get():%v key:%v ->kvserver %v", key, args, i)
@@ -68,7 +68,7 @@ func (ck *Clerk) Get(key string) string {
 			if reply.Err == OK {
 				DPrintf("Clerk成功收到了Get(): %v", reply)
 				ck.lastLeader = i
-				ck.commandId++
+				ck.commandIndex++
 				return reply.Value
 			} else if reply.Err == ErrNoKey {
 				return ""
@@ -94,14 +94,14 @@ func (ck *Clerk) Get(key string) string {
 // arguments. and reply must be passed as a pointer.
 func (ck *Clerk) PutAppend(key string, value string, op string) {
 	// You will have to modify this function.
-	id := nrand()
 
 	i := ck.lastLeader
 	for {
 		// time.Sleep(time.Millisecond * 1000)  You want to destory me? fxxking Sleep()
 		args := PutAppendArgs{Key: key,
 			Value:         value,
-			Identifier:    id,
+			ClientId:      ck.clientId,
+			CommandIndex:  ck.commandIndex,
 			OperationType: op,
 		}
 		reply := PutAppendReply{}
@@ -116,7 +116,7 @@ func (ck *Clerk) PutAppend(key string, value string, op string) {
 			if reply.Err == OK {
 				DPrintf("Clerk成功收到了%v(): %v", args, reply)
 				ck.lastLeader = i
-				ck.commandId++
+				ck.commandIndex++
 				return
 			} else if reply.Err == ErrWrongLeader || reply.Err == ErrTimeout {
 				i = (i + 1) % len(ck.servers)
