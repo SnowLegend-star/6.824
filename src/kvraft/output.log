@@ -1,20 +1,23 @@
 Test: InstallSnapshot RPC (4B) ...
-  ... Passed --   4.6  3  5522   63
+  ... Passed --   4.4  3  5704   63
 Test: snapshot size is reasonable (4B) ...
-  ... Passed --  11.7  3  8198  800
+  ... Passed --  11.8  3  8638  800
 Test: ops complete fast enough (4B) ...
-  ... Passed --  15.4  3 10126    0
+  ... Passed --  15.6  3 10043    0
 Test: restarts, snapshots, one client (4B) ...
-  ... Passed --  21.2  5 30514  940
+  ... Passed --  20.0  5 27483  955
 Test: restarts, snapshots, many clients (4B) ...
-  ... Passed --  23.7  5 84759 1484
+  ... Passed --  23.9  5 88257 1488
 Test: unreliable net, snapshots, many clients (4B) ...
-  ... Passed --  15.9  5  9102 1151
+  ... Passed --  16.0  5  9018 1150
 Test: unreliable net, restarts, snapshots, many clients (4B) ...
-  ... Passed --  22.5  5  9892 1056
+  ... Passed --  23.3  5 10413 1152
 Test: unreliable net, restarts, partitions, snapshots, many clients (4B) ...
-  ... Passed --  30.0  5  7554  697
+  ... Passed --  28.5  5  7388  673
 Test: unreliable net, restarts, partitions, snapshots, random keys, many clients (4B) ...
-  ... Passed --  31.0  7 14519  715
-PASS
-ok  	6.5840/kvraft	175.990s
+info: wrote history visualization to /tmp/2237712164.html
+--- FAIL: TestSnapshotUnreliableRecoverConcurrentPartitionLinearizable4B (31.97s)
+    test_test.go:385: history is not linearizable
+FAIL
+exit status 1
+FAIL	6.5840/kvraft	175.515s

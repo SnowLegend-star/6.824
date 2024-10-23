@@ -60,18 +60,12 @@ func (ck *Clerk) Get(key string) string {
 			DPrintf("Clerk发送Get():%v ->kvserver %v失败", args, i)
 		}
 		if ok {
-
-			// if reply.Err != ErrWrongLeader {
-			//
-			// }
 			//只有两种情况可以return
-			if reply.Err == OK {
+			if reply.Err == OK || reply.Err == ErrNoKey { //这两种情况可以合并
 				DPrintf("Clerk成功收到了Get(): %v", reply)
 				ck.lastLeader = i
 				ck.commandIndex++
 				return reply.Value
-			} else if reply.Err == ErrNoKey {
-				return ""
 			}
 		}
 		//说明两种可能的情况

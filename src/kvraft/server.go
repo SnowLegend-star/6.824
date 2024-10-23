@@ -81,7 +81,7 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 		return
 	}
 	DPrintf("kvserver %v收到了op: %v (ClientId, CommandIndex)=(%v,%v)", kv.me, operation, clientId, commandIndex)
-	// //这个请求已经完成就直接返回
+	//这个请求已经完成就直接返回
 	// kv.mu.Lock()
 	// if kv.isRepetitive(clientId, commandIndex) {
 	// 	reply.Value = kv.kvMachine.KVStorage[args.Key]
@@ -198,7 +198,7 @@ func (kv *KVServer) applier() {
 				if op.OpType == "Get" {
 					//如果这个命令已经过时了，直接丢弃 只是针对于Get()
 					if term, isLeader := kv.rf.GetState(); !isLeader || term != msg.CommandTerm {
-						kv.mu.Unlock() //真的是被lock烦死了
+						kv.mu.Unlock()
 						continue
 					}
 					res.value = kv.kvMachine.KVStorage[op.OpKey]
