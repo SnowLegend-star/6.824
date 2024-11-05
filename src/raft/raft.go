@@ -23,6 +23,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"math/rand"
+	"reflect"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -44,6 +45,7 @@ type ApplyMsg struct {
 	CommandValid bool
 	Command      interface{}
 	CommandIndex int
+	CommandTerm  int
 
 	// For 3D:
 	SnapshotValid bool
@@ -60,11 +62,12 @@ type LogEntry struct {
 
 // A Go object implementing a single Raft peer.
 type Raft struct {
-	mu        sync.Mutex          // Lock to protect shared access to this peer's state
-	peers     []*labrpc.ClientEnd // RPC end points of all peers
-	persister *Persister          // Object to hold this peer's persisted state
-	me        int                 // this peer's index into peers[]
-	dead      int32               // set by Kill()
+	mu          sync.Mutex // Lock to protect shared access to this peer's state
+	heartbeatMu sync.Mutex
+	peers       []*labrpc.ClientEnd // RPC end points of all peers
+	persister   *Persister          // Object to hold this peer's persisted state
+	me          int                 // this peer's index into peers[]
+	dead        int32               // set by Kill()
 
 	// Your data here (3A, 3B, 3C).
 	// Look at the paper's Figure 2 for a description of what
@@ -96,6 +99,10 @@ type Raft struct {
 	timeCountDown int
 }
 
+func (rf *Raft) GetRaftStateSize() int {
+	return rf.persister.RaftStateSize()
+}
+
 // 重新设置index
 // snapshot也相当于一条entry
 func (rf *Raft) ResetIndex(index int) int {
@@ -121,6 +128,50 @@ func max(a, b int) int {
 func nrand() int64 {
 	rand.Seed(time.Now().UnixNano())
 	return rand.Int63n(1 << 62)
+}
+
+func compareEntries(entry1, entry2 interface{}) bool {
+	if entry1 == nil || entry2 == nil {
+		return entry1 == entry2 // 若其中一个为 nil，则仅当两个都为 nil 时才返回 true
+	}
+
+	// 获取 entry1 和 entry2 的反射值
+	v1 := reflect.ValueOf(entry1)
+	v2 := reflect.ValueOf(entry2)
+
+	// 检查类型是否一致
+	if v1.Type() != v2.Type() {
+		return false
+	}
+
+	return compareValues(v1, v2)
+}
+
+// Helper function to compare two reflect.Values, skipping uncomparable fields.
+func compareValues(v1, v2 reflect.Value) bool {
+	// 根据类型进行比较
+	switch v1.Kind() {
+	case reflect.Struct:
+		// 如果是结构体，逐个字段比较
+		for i := 0; i < v1.NumField(); i++ {
+			field1 := v1.Field(i)
+			field2 := v2.Field(i)
+
+			// 递归比较字段值
+			if !compareValues(field1, field2) {
+				return false
+			}
+		}
+	case reflect.Slice, reflect.Map, reflect.Func:
+		// 跳过不可比较的字段类型
+		return true
+	default:
+		// 如果字段是可比较类型，直接比较值
+		if v1.CanInterface() && v1.Type().Comparable() {
+			return v1.Interface() == v2.Interface()
+		}
+	}
+	return true
 }
 
 // return currentTerm and whether this server
@@ -283,7 +334,6 @@ func (rf *Raft) InstallSnapshot(args *SnapshotArgs, reply *SnapshotReply) {
 	reply.FollowerTerm = rf.currentTerm
 
 	if rf.currentTerm > args.LeaderTerm {
-		Debug(dSnap, "Server %v的Term=%v > Leader %v的Term=%v", rf.me, rf.currentTerm, args.LeaderId, args.LeaderTerm)
 		return
 	}
 
@@ -297,9 +347,13 @@ func (rf *Raft) InstallSnapshot(args *SnapshotArgs, reply *SnapshotReply) {
 
 	//如果Server包含这个snapshot就直接返回
 	if rf.lastIncludedIndex == args.LastIncludedIndex &&
-		// (rf.logLength-1) >= args.LastIncludedIndex &&
 		rf.log[rf.ResetIndex(rf.lastIncludedIndex)].Term == args.LastIncludedTerm {
-		Debug(dSnap, "Server %v 的lastIncludedIndex=%v Leader %v的args.lastIncludedIndex=%v", rf.me, rf.lastIncludedIndex, args.LeaderId, args.LastIncludedIndex)
+		return
+	}
+
+	//如果Follower当前的snapshot比Leader发送来的snapshot更新呢？
+	if rf.ResetIndex(args.LastIncludedIndex) < 0 {
+		Debug(dError, "Follower当前的snapshot比Leader发送来的snapshot更新")
 		return
 	}
 
@@ -571,12 +625,20 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	rf.persist()
 	index = rf.logLength - 1 //下标从1开始
 
+	// for i := 0; i < len(rf.peers); i++ {
+	// 	rf.nextIndex[i] = index + 1 //有待商榷
+	// 	rf.matchIndex[i] = 0
+	// }
 	if len(rf.log) != 1 {
 		Debug(dAppendEntry, "Leader=%v, Term= %v的日志为: %v", rf.me, rf.currentTerm, rf.log)
 	}
-	rf.mu.Unlock()
-	// Reset countdown to 0 to trigger an immediate heartbeat
+	// 使用 heartbeatMu 锁保护倒计时重置操作
+
 	rf.timeCountDown = 0
+
+	rf.mu.Unlock()
+
+	// rf.sendHeartBeat()
 	return index, term, isLeader
 }
 
@@ -650,7 +712,7 @@ func (rf *Raft) HeartBeat(args *AppendEntryArgs, reply *AppendEntryReply) {
 	}
 
 	//一个条件不满足就是不匹配
-	if !(rf.log[rf.ResetIndex(args.PrevLogIndex)].Term == args.PrevLogTerm && (rf.log[rf.ResetIndex(args.PrevLogIndex)].Entry == args.EntryTmp.Entry || args.EntryTmp.Entry == "Too long")) {
+	if !(rf.log[rf.ResetIndex(args.PrevLogIndex)].Term == args.PrevLogTerm && (compareEntries(rf.log[rf.ResetIndex(args.PrevLogIndex)].Entry, args.EntryTmp.Entry) || args.EntryTmp.Entry == "Too long")) {
 		//snapshot的command部分是nil, 要排除在外   但是snapshot是必定匹配的，就像以前index=0的entry是一样的
 		if !(rf.log[rf.ResetIndex(args.PrevLogIndex)].Entry == nil && rf.log[rf.ResetIndex(args.PrevLogIndex)].Term != -1) {
 			Debug(dError, "Leader的args.PrevLogIndex=%v ", args.PrevLogIndex)
@@ -672,31 +734,16 @@ func (rf *Raft) HeartBeat(args *AppendEntryArgs, reply *AppendEntryReply) {
 	}
 
 	//日志匹配上了
-	Debug(dHeartbeat, "日志匹配 此时args.PrevLogIndex=%v Server的len(log)=%v, log为%v", args.PrevLogIndex, len(rf.log), rf.log)
-
-	// tmp := rf.log
-
 	rf.log = rf.log[:rf.ResetIndex(args.PrevLogIndex+1)]
 	rf.logLength = len(rf.log) + rf.lastIncludedIndex
+	Debug(dInfo, "Server %v, LogLength=%v,len(rf.log)=%v, lastIncludedIndex=%v", rf.me, rf.logLength, len(rf.log), rf.lastIncludedIndex)
 
 	rf.persist() //持久化记录
 	if len(args.Entries) > 0 {
 		rf.log = append(rf.log, args.Entries...)
 		rf.logLength = len(rf.log) + rf.lastIncludedIndex
 		rf.persist()
-
-		// //如果原来的log已经包含了所有的entries
-		// if len(tmp)+rf.lastIncludedIndex >= rf.logLength && tmp[rf.ResetIndex(rf.logLength-1)] == rf.log[rf.ResetIndex(rf.logLength-1)] {
-		// 	rf.log = tmp
-		// 	rf.logLength = len(rf.log) + rf.lastIncludedIndex
-		// 	rf.persist()
-		// }
-
 	}
-
-	// Debug(dInfo, "日志匹配 Server %v, LogLength=%v,len(rf.log)=%v, lastIncludedIndex=%v", rf.me, rf.logLength, len(rf.log), rf.lastIncludedIndex)
-	Debug(dHeartbeat, "日志匹配 Server %v, Leader %v  index=%v, Term=%v, len(entries)=%v。LogLength=%v", rf.me, args.LeaderId, args.PrevLogIndex, args.LeaderTerm, len(args.Entries), rf.logLength)
-	// Debug(dInfo, "args.LeaderCommit=%v, rf.commitIndex=%v", args.LeaderCommit, rf.commitIndex)
 	reply.Success = true
 	reply.FollowerTerm = rf.currentTerm
 
@@ -709,7 +756,7 @@ func (rf *Raft) HeartBeat(args *AppendEntryArgs, reply *AppendEntryReply) {
 	}
 
 	if len(rf.log) != 1 {
-		Debug(dHeartbeat, "Follower=%v, Term= %v的日志为: %v", rf.me, rf.currentTerm, rf.log)
+		Debug(dLog, "Follower=%v, Term= %v的日志为: %v", rf.me, rf.currentTerm, rf.log)
 	}
 
 	rf.currentTerm = args.LeaderTerm
@@ -745,6 +792,13 @@ func (rf *Raft) sendHeartBeat() {
 
 			continue
 		}
+
+		//数组下标越界，直接return
+		if rf.ResetIndex(rf.nextIndex[i]-1) >= len(rf.log) {
+			rf.mu.Unlock()
+			return
+		}
+
 		PrevLogTermConst[i] = rf.log[rf.ResetIndex(rf.nextIndex[i]-1)].Term
 		EntryTmpConst[i] = rf.log[rf.ResetIndex(rf.nextIndex[i]-1)]
 
@@ -770,9 +824,9 @@ func (rf *Raft) sendHeartBeat() {
 		}
 	}
 	rf.lastMsgFromLeader = time.Now()
+	rf.mu.Unlock()
 
 	Debug(dInfo, "Leader %v的PrevLogIndexConst为: %v", rf.me, PrevLogIndexConst)
-	rf.mu.Unlock()
 
 	for serverId := range rf.peers {
 		if serverId != rf.me && rf.serverType == "Leader" {
@@ -785,6 +839,7 @@ func (rf *Raft) sendHeartBeat() {
 
 				//判断是否需要发送snapshot
 				if legalState[i] == -1 {
+					rf.mu.Lock()
 					argsSnapshot := SnapshotArgs{
 						LeaderId:          rf.me,
 						LeaderTerm:        currentTermConst,
@@ -792,7 +847,7 @@ func (rf *Raft) sendHeartBeat() {
 						LastIncludedTerm:  rf.log[rf.ResetIndex(rf.lastIncludedIndex)].Term,
 						SnapshotData:      rf.snapshotData,
 					}
-
+					rf.mu.Unlock()
 					go rf.sendSnapshot(i, argsSnapshot)
 					return
 				}
@@ -824,21 +879,8 @@ func (rf *Raft) sendHeartBeat() {
 					return
 				}
 
-				//任期检查匹配失败
-				if replyAppendEntry.FollowerTerm > rf.currentTerm {
-					//旧王已陨，新帝当立
-					Debug(dLeader, "Leader: %v,term=%v退位了", rf.me, rf.currentTerm)
-					rf.currentTerm = replyAppendEntry.FollowerTerm
-					rf.serverType = "Follower"
-					rf.voteCount = 0
-					rf.voteFor = -1
-					rf.persist() //持久化记录
-					return
-				}
-
 				//日志一致性检查通过
 				if replyAppendEntry.Success {
-					Debug(dInfo, "Server %v -> Leader %v: argsAppendEntry.PrevLogIndex=%v, len(argsAppendEntry.Entries)=%v", i, rf.me, argsAppendEntry.PrevLogIndex, len(argsAppendEntry.Entries))
 					rf.matchIndex[i] = argsAppendEntry.PrevLogIndex + len(argsAppendEntry.Entries)
 					rf.nextIndex[i] = rf.matchIndex[i] + 1
 
@@ -874,9 +916,22 @@ func (rf *Raft) sendHeartBeat() {
 					return //通过了一致性检查直接返回这个goroutine
 				}
 
+				//任期检查匹配失败
+				if replyAppendEntry.FollowerTerm > rf.currentTerm {
+					//旧王已陨，新帝当立
+					Debug(dLeader, "Leader: %v,term=%v退位了", rf.me, rf.currentTerm)
+					rf.currentTerm = replyAppendEntry.FollowerTerm
+					rf.serverType = "Follower"
+					rf.voteCount = 0
+					rf.voteFor = -1
+					rf.persist() //持久化记录
+					return
+				}
+
 				//快速回退nextIndex
 				if replyAppendEntry.ApplyFail {
-					rf.nextIndex[i] = replyAppendEntry.ConflictIndex
+
+					rf.nextIndex[i] = replyAppendEntry.ConflictIndex //投机取巧
 					Debug(dInfo, "rf.nextIndex[%d]快速回退到%v", i, rf.nextIndex[i])
 				}
 
@@ -915,6 +970,7 @@ func (rf *Raft) heartbeat() {
 	rf.timeCountDown = 50 // 50ms countdown before each regular heartbeat
 
 	for !rf.killed() {
+
 		if rf.serverType == "Leader" {
 			if rf.timeCountDown <= 0 {
 				rf.sendHeartBeat()
@@ -927,35 +983,6 @@ func (rf *Raft) heartbeat() {
 	}
 }
 
-// // 应用日志条目到状态机，并更新 lastApplied
-// func (rf *Raft) applier() {
-// 	msg := ApplyMsg{CommandValid: false}
-// 	for !rf.killed() {
-// 		time.Sleep(10 * time.Millisecond)
-// 		rf.mu.Lock()
-// 		if rf.lastApplied < rf.commitIndex && rf.lastApplied < rf.logLength-1 { //少用for循环来避免goroutine长时间持有锁
-// 			rf.lastApplied++
-// 			if rf.ResetIndex(rf.lastApplied) < 0 {
-// 				Debug(dError, "在applier()中, Server %v的lastApplied=%v, lastIncludedIndex=%v", rf.me, rf.lastApplied, rf.lastIncludedIndex)
-// 			}
-// 			msg = ApplyMsg{
-// 				CommandValid: true,
-// 				Command:      rf.log[rf.ResetIndex(rf.lastApplied)].Entry,
-// 				CommandIndex: rf.lastApplied,
-// 			}
-// 		}
-// 		lastApplied := rf.lastApplied
-// 		commitIndex := rf.commitIndex
-// 		rf.mu.Unlock()
-// 		if msg.CommandValid {
-// 			rf.applyCh <- msg
-// 			Debug(dCommit, "%v %v提交lastApplied=%v的msg, 此时commitIndex=%v", rf.serverType, rf.me, lastApplied, commitIndex)
-// 			msg.CommandValid = false
-// 		}
-// 	}
-// }
-
-// 应用日志条目到状态机，并更新 lastApplied  尝试批量更新
 func (rf *Raft) applier() {
 	for !rf.killed() {
 		time.Sleep(10 * time.Millisecond) // 睡眠间隔可以动态调整
@@ -974,6 +1001,7 @@ func (rf *Raft) applier() {
 				CommandValid: true,
 				Command:      rf.log[rf.ResetIndex(rf.lastApplied)].Entry,
 				CommandIndex: rf.lastApplied,
+				CommandTerm:  rf.log[rf.ResetIndex(rf.lastApplied)].Term,
 			})
 		}
 

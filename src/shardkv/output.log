@@ -1,0 +1,943 @@
+Test (5A): static shards ...
+006135 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3654283983460787872 0}
+006136 RAFT Server 2收到来自raft的msg: {Join {map[100:[server-100-0 server-100-1 server-100-2]] [] 0 0 0} 2036399092766604095 0}
+006136 CONFIG 新的config为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+006137 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 962505414963245231 0}
+006137 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 0}
+006139 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 0}
+006139 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 0}
+006140 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 0}
+006141 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 0}
+006141 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 0}
+006142 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2242988473352470767 0}
+006143 CONFIG Serverd的新配置为{1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+006352 RAFT Server 2收到来自raft的msg: {Join {map[101:[server-101-0 server-101-1 server-101-2]] [] 0 0 0} 2036399092766604095 1}
+006353 CONFIG 新的config为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+007306 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2242988473352470767 1}
+007307 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 1}
+007308 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3654283983460787872 1}
+007308 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 1}
+007308 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 1}
+007309 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 1}
+007310 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 962505414963245231 1}
+007310 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 1}
+007310 CONFIG Serverd的新配置为{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+007310 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 1}
+007527 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 142069116383890569 0}
+007528 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+008360 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 2}
+008361 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 2}
+008362 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 962505414963245231 2}
+008362 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3654283983460787872 2}
+008363 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 2}
+008364 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2242988473352470767 2}
+008364 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 2}
+008364 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 2}
+008365 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 2}
+009119 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 142069116383890569 1}
+009122 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+009553 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 3}
+009554 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 3}
+009555 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 3}
+009555 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 962505414963245231 3}
+009556 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3654283983460787872 3}
+009556 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2242988473352470767 3}
+009556 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 3}
+009557 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 3}
+009557 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 3}
+010696 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 4}
+010696 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 4}
+010697 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 962505414963245231 4}
+010697 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 4}
+010698 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 4}
+010698 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 4}
+010699 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 4}
+010700 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2242988473352470767 4}
+010700 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3654283983460787872 4}
+011766 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 5}
+011767 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2242988473352470767 5}
+011767 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3654283983460787872 5}
+011767 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 962505414963245231 5}
+011768 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 5}
+011768 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 5}
+011768 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 5}
+011768 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 5}
+011769 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 5}
+012932 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3654283983460787872 6}
+012932 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 6}
+012933 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 6}
+012933 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 6}
+012934 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 6}
+012934 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 6}
+012934 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 6}
+012934 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 962505414963245231 6}
+012935 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2242988473352470767 6}
+014108 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 7}
+014109 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 7}
+014110 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 7}
+014110 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 7}
+014110 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 7}
+014110 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 7}
+014324 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 0}
+014325 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 475644534466960438 0}
+014326 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 0}
+014327 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 360986480955851 0}
+014327 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+014327 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 0}
+014327 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 0}
+014328 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+014328 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+014328 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+014327 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+014328 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2040942609612139802 0}
+014329 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 0}
+014329 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+014330 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1680677102067935663 0}
+014330 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3792558808176421784 0}
+014330 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+014330 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+014330 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+014331 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+015175 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 8}
+015176 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 8}
+015176 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 8}
+015176 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 8}
+015176 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 8}
+015177 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 8}
+016330 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 9}
+016331 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 9}
+016331 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 9}
+016332 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 9}
+016332 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 9}
+016332 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 9}
+016541 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 1}
+016542 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 1}
+016544 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+016544 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+016758 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 1}
+016760 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+016977 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 1}
+016979 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+017509 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 10}
+017511 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 10}
+017512 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 10}
+017512 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 10}
+017513 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 10}
+017513 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 10}
+017514 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 1}
+017515 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+018561 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 11}
+018562 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 11}
+018562 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 11}
+018563 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 11}
+018563 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 11}
+018563 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 11}
+019534 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 2}
+019535 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 2}
+019536 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+019536 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+019757 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 12}
+019758 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 12}
+019759 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 12}
+019759 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 12}
+019760 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 12}
+019760 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 12}
+019760 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 2}
+019761 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+020377 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 2}
+020377 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 2}
+020378 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+020379 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+020901 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 13}
+020902 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 13}
+020902 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 13}
+020903 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 13}
+020903 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 13}
+020903 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 13}
+021965 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 3}
+021966 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 14}
+021967 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 14}
+021967 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 14}
+021968 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+021968 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 14}
+021968 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 14}
+021969 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 14}
+022174 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 3}
+022176 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+022491 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 3}
+022494 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+022916 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 3}
+022920 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+023127 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 15}
+023129 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 15}
+023130 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 15}
+023130 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 15}
+023131 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 15}
+023131 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 15}
+023342 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 3}
+023344 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+024292 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 16}
+024293 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 16}
+024294 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 16}
+024295 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 16}
+024296 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 16}
+024296 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 16}
+024933 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 4}
+024935 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+025352 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 4}
+025352 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 17}
+025354 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 17}
+025354 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+025354 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 17}
+025355 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 17}
+025355 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 17}
+025356 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 17}
+025782 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 4}
+025785 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+026095 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 4}
+026100 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+026514 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 4}
+026515 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 18}
+026517 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 18}
+026517 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+026517 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 18}
+026518 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 18}
+026518 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 18}
+026518 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 18}
+027696 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 19}
+027697 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 19}
+027698 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 19}
+027699 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 19}
+027699 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 19}
+027699 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 19}
+028122 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 5}
+028127 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+028328 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 5}
+028330 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+028541 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 5}
+028543 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+028968 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 20}
+028970 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 20}
+028971 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 20}
+028971 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 20}
+028972 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 20}
+028973 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 20}
+029185 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 5}
+029187 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+029501 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 5}
+029503 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+030125 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 21}
+030126 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 21}
+030126 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 21}
+030127 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 21}
+030127 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 21}
+030128 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 21}
+030553 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 6}
+030554 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+030765 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 6}
+030766 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+031089 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 6}
+031091 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+031312 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 6}
+031313 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 22}
+031314 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 22}
+031314 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 22}
+031315 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 22}
+031315 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 22}
+031315 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+031318 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 22}
+032473 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 6}
+032474 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 23}
+032475 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 23}
+032475 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 23}
+032476 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 23}
+032477 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 23}
+032477 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 23}
+032476 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+033318 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 7}
+033320 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+033742 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 24}
+033743 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 24}
+033744 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 24}
+033744 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 24}
+033745 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 24}
+033745 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 24}
+033746 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 7}
+033747 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 7}
+033748 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+033749 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+034173 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 7}
+034175 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+034600 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3566216441126883014 0}
+034600 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 725383007809557167 0}
+034601 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3880853762820402929 0}
+034912 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 25}
+034912 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 25}
+034913 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 25}
+034913 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 25}
+034914 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 25}
+034914 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 25}
+035557 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 7}
+035560 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+035763 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 725383007809557167 1}
+035765 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3880853762820402929 1}
+035765 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3566216441126883014 1}
+035971 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 142069116383890569 2}
+035972 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 26}
+035973 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 26}
+035973 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 26}
+035974 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+035974 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 26}
+035975 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 26}
+035975 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 8}
+035975 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 26}
+035976 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 8}
+035976 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+035977 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+036183 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 8}
+036184 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 8}
+036185 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+036186 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+036708 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 8}
+036710 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+036912 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3880853762820402929 2}
+036913 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 725383007809557167 2}
+036913 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3566216441126883014 2}
+037121 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 27}
+037122 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 27}
+037123 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 27}
+037124 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 142069116383890569 3}
+037125 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 27}
+037125 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 27}
+037126 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 27}
+037127 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 9}
+037125 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+037128 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 9}
+037128 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+037129 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+037342 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 9}
+037344 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 9}
+037345 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+037345 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+037770 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 9}
+037771 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+037990 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3566216441126883014 3}
+037991 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 725383007809557167 3}
+037992 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3880853762820402929 3}
+038301 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 28}
+038303 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 28}
+038303 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 28}
+038304 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 10}
+038324 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 28}
+038325 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 28}
+038325 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 28}
+038325 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+038326 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 142069116383890569 4}
+038326 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 10}
+038327 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+038327 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+038537 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 10}
+038539 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 10}
+038541 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+038541 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+038963 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 10}
+038965 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+039171 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3880853762820402929 4}
+039172 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3566216441126883014 4}
+039172 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 725383007809557167 4}
+039378 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 29}
+039378 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 29}
+039379 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 29}
+039379 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 11}
+039379 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 142069116383890569 5}
+039379 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 29}
+039380 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 29}
+039380 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+039380 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+039380 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 29}
+039381 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 11}
+039383 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+039696 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 11}
+039697 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 11}
+039698 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+039698 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+040113 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 11}
+040115 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+040321 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3880853762820402929 5}
+040322 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3566216441126883014 5}
+040322 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 725383007809557167 5}
+040533 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 12}
+040536 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 142069116383890569 6}
+040537 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 12}
+040538 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 30}
+040539 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+040539 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 30}
+040540 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 30}
+040540 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+040539 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+040542 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 30}
+040542 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 30}
+040544 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 30}
+040955 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3990591104182866924 12}
+040956 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2714123846653335655 12}
+040957 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+040957 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+041167 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1707701393203022701 12}
+041169 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+041479 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3566216441126883014 6}
+041480 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3880853762820402929 6}
+041482 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 725383007809557167 6}
+041688 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 142069116383890569 7}
+041689 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2278251581177082573 13}
+041690 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1877456931157862503 13}
+041690 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 31}
+041691 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+041691 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 31}
+041691 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 31}
+041692 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+041692 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 31}
+041692 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 31}
+041691 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+041695 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 31}
+042650 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 725383007809557167 7}
+042651 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3566216441126883014 7}
+042652 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3880853762820402929 7}
+042860 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1129702610197031880 32}
+042862 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2860285814460623398 32}
+042862 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 1982012943926483732 32}
+042863 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 670372296625484363 32}
+042864 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 3987238589832509402 32}
+042864 RAFT Server 2收到来自raft的msg: {Query {map[] [] 0 0 -1} 2493978863068011809 32}
+  ... Passed
+Test (5A): rejection ...
+050755 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 0}
+050756 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 0}
+050757 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 0}
+050758 RAFT Server 0收到来自raft的msg: {Join {map[100:[server-100-0 server-100-1 server-100-2]] [] 0 0 0} 232220742016738355 0}
+050758 CONFIG 新的config为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+050759 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 0}
+050759 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 0}
+050760 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 0}
+050760 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 0}
+050761 CONFIG Serverd的新配置为{1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+050761 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 0}
+050761 CONFIG Serverd的新配置为{1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+050762 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 0}
+050762 CONFIG Serverd的新配置为{1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+050968 RAFT Server 0收到来自raft的msg: {Join {map[101:[server-101-0 server-101-1 server-101-2]] [] 0 0 0} 232220742016738355 1}
+050969 CONFIG 新的config为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+051831 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 1}
+051832 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 1}
+051833 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 1}
+051833 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 1}
+051833 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 1}
+051833 CONFIG Serverd的新配置为{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+051834 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 1}
+051834 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 1}
+051834 CONFIG Serverd的新配置为{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+051834 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 1}
+051835 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 1}
+051834 CONFIG Serverd的新配置为{2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+052039 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4358484049513212538 0}
+052052 CONFIG Clerk获得的新配置为: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}
+052985 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 2}
+052986 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 2}
+052986 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 2}
+052986 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 2}
+052987 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 2}
+052987 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 2}
+052987 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 2}
+052988 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 2}
+052988 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 2}
+054043 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 3}
+054044 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 3}
+054044 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 3}
+054045 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 3}
+054045 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 3}
+054046 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 3}
+054046 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 3}
+054046 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 3}
+054046 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 3}
+055237 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 4}
+055240 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 4}
+055241 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 4}
+055242 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 4}
+055244 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 4}
+055245 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 4}
+055245 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 4}
+055245 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 4}
+055246 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 4}
+056413 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 5}
+056414 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 5}
+056414 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 5}
+056414 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 5}
+056415 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 5}
+056415 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 5}
+056416 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 5}
+056416 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 5}
+056416 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 5}
+057476 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 6}
+057477 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 6}
+057478 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 6}
+057478 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 6}
+057479 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 6}
+057479 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 6}
+057479 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 6}
+057480 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 6}
+057480 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 6}
+058642 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 7}
+058643 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 7}
+058644 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 7}
+058644 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 7}
+058645 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 7}
+058645 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 7}
+058645 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 7}
+058645 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 7}
+058646 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 7}
+059787 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 8}
+059788 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 8}
+059789 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 8}
+059790 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 8}
+059790 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 8}
+059791 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 8}
+059791 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 8}
+059791 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 8}
+059792 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 8}
+060960 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 9}
+060961 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 9}
+060962 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 9}
+060963 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 9}
+060964 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 9}
+060964 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 9}
+060965 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 9}
+060966 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 9}
+060967 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 9}
+062043 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 10}
+062044 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 10}
+062045 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 10}
+062046 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 10}
+062046 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 10}
+062046 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 10}
+062047 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 10}
+062048 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 10}
+062048 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 10}
+063222 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 11}
+063223 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 11}
+063224 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 11}
+063225 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 11}
+063225 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 11}
+063225 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 11}
+063226 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 11}
+063227 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 11}
+063228 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 11}
+063908 RAFT Server 1收到来自raft的msg: {Join {map[100:[server-100-0 server-100-1 server-100-2]] [] 0 0 0} 2258171911820119811 0}
+063909 CONFIG 新的config为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+064299 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 12}
+064300 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 12}
+064301 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 12}
+064302 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 12}
+064517 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 12}
+064519 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 12}
+064520 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 12}
+064520 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 12}
+064521 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 12}
+065098 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 0}
+065099 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 4251848317600400505 0}
+065100 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 0}
+065100 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+065101 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 766682563813195410 0}
+065101 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+065102 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+065102 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+065105 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 0}
+065105 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 0}
+065106 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 243231432367058110 0}
+065106 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 188530157455772908 0}
+065106 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+065107 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+065107 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+065107 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+065107 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 247496833272889829 0}
+065108 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 0}
+065108 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+065111 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+065199 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+065201 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+065203 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+065203 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+065204 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+065482 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 13}
+065483 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 13}
+065484 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 13}
+065485 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 13}
+065696 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 13}
+065697 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 13}
+065698 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 13}
+065698 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 13}
+065699 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 13}
+066370 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 1}
+066371 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 1}
+066371 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 1}
+066371 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 1}
+066372 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+066372 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+066372 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+066373 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+066372 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 1}
+066376 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+066558 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 14}
+066559 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 14}
+066559 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 14}
+066560 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 14}
+066582 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+066583 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+066583 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+066584 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+066584 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+066771 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 14}
+066772 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 14}
+066773 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 14}
+066773 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 14}
+066773 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 14}
+067721 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 15}
+067722 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 15}
+067723 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 15}
+067724 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 15}
+067744 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 2}
+067744 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 2}
+067745 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 2}
+067745 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 2}
+067745 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+067746 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+067746 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 2}
+067746 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+067747 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+067747 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+067846 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+067847 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+067848 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+067848 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+067848 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+067937 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 15}
+067938 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 15}
+067939 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 15}
+067939 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 15}
+067940 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 15}
+068788 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 16}
+068789 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 16}
+068789 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 16}
+068789 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 16}
+068993 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 16}
+068994 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 16}
+068995 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 16}
+068995 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 16}
+068996 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 16}
+069094 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 3}
+069095 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 3}
+069096 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 3}
+069096 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+069096 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+069097 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+069096 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 3}
+069098 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 3}
+069099 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+069099 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+069303 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+069304 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+069306 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+069306 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+069307 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+069938 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 17}
+069940 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 17}
+069941 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 17}
+069941 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 17}
+070153 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 17}
+070155 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 17}
+070156 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 17}
+070157 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 17}
+070158 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 17}
+070483 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 4}
+070484 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 4}
+070484 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 4}
+070485 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+070485 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+070489 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+070485 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 4}
+070491 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 4}
+070494 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+070500 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+070587 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+070590 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+070592 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+070593 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+070594 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+071007 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 18}
+071007 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 18}
+071010 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 18}
+071011 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 18}
+071320 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 18}
+071320 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 18}
+071322 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 18}
+071322 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 18}
+071323 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 18}
+071862 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 5}
+071862 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 5}
+071863 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 5}
+071864 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 5}
+071864 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+071865 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+071865 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 5}
+071865 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+071866 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+071865 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+071970 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+071971 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+071972 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+071972 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+071973 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+072167 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 19}
+072168 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 19}
+072169 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 19}
+072169 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 19}
+072375 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 19}
+072376 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 19}
+072377 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 19}
+072378 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 19}
+072378 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 19}
+073213 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 6}
+073216 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 6}
+073217 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 6}
+073217 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 6}
+073218 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+073219 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+073220 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+073221 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+073219 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 6}
+073223 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+073320 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+073321 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+073321 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 20}
+073322 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+073322 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 20}
+073322 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+073323 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+073323 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 20}
+073324 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 20}
+073535 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 20}
+073536 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 20}
+073537 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 20}
+073538 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 20}
+073538 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 20}
+074486 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 21}
+074488 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 21}
+074488 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 21}
+074489 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 21}
+074597 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 7}
+074598 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 7}
+074599 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+074601 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+074609 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 7}
+074611 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 7}
+074612 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+074613 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 7}
+074618 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+074620 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+074698 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 21}
+074700 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 21}
+074701 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 21}
+074701 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 21}
+074702 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 21}
+074916 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+074918 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+074919 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+074919 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+074920 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+075777 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 22}
+075778 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 22}
+075779 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 22}
+075779 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 22}
+075780 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 22}
+075780 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 22}
+075781 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 22}
+075996 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 22}
+075996 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 22}
+076087 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 8}
+076088 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 8}
+076088 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 8}
+076089 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+076089 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+076089 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+076089 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 8}
+076090 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 8}
+076091 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+076092 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+076188 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+076189 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+076189 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+076190 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+076190 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+076939 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 23}
+076940 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 23}
+076941 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 23}
+076941 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 23}
+076941 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 23}
+076942 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 23}
+076942 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 23}
+077149 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 23}
+077150 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 23}
+077255 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 9}
+077256 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 9}
+077257 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 9}
+077257 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 9}
+077258 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+077258 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+077258 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+077259 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+077258 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 9}
+077261 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+077345 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+077347 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+077348 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+077349 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+077349 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+077993 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 24}
+077994 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 24}
+077995 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 24}
+077995 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 24}
+077996 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 24}
+077996 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 24}
+077996 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 24}
+078208 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 24}
+078209 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 24}
+078631 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 10}
+078632 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 10}
+078633 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 10}
+078633 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 10}
+078634 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+078634 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 10}
+078634 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+078634 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+078635 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+078634 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+078700 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+078703 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+078704 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+078914 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+078915 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+079169 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 25}
+079170 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 25}
+079171 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 25}
+079171 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 25}
+079172 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 25}
+079173 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 25}
+079174 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 25}
+079384 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 25}
+079385 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 25}
+080019 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 11}
+080020 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 11}
+080020 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 11}
+080021 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 11}
+080021 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+080021 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+080022 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+080022 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 11}
+080023 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+080022 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+080270 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+080272 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+080273 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+080274 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+080275 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+080334 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 26}
+080335 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 26}
+080336 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 26}
+080336 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 26}
+080336 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 26}
+080337 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 26}
+080337 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 26}
+080554 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 26}
+080554 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 26}
+081303 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 12}
+081304 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 12}
+081305 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+081305 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+081427 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+081428 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+081525 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 12}
+081525 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 12}
+081526 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 12}
+081526 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+081527 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+081527 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+081605 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 27}
+081606 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 27}
+081606 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 27}
+081607 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 27}
+081607 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 27}
+081607 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 27}
+081608 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 27}
+081608 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 27}
+081608 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 27}
+081630 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+081631 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+081631 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+082691 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 13}
+082691 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 13}
+082693 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+082693 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+082768 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 28}
+082769 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 28}
+082770 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 28}
+082770 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 28}
+082771 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 28}
+082771 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 28}
+082771 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 28}
+082771 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 28}
+082772 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 28}
+082796 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+082797 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+082898 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 13}
+082899 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 13}
+082900 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+082900 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 13}
+082900 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+082902 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+083003 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+083004 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+083005 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+083909 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 29}
+083910 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 29}
+083911 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 29}
+083912 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 29}
+083913 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 29}
+083913 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 29}
+083914 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 29}
+083915 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 29}
+083915 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 29}
+084067 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 1508516507523715088 14}
+084068 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 2298094645712406848 14}
+084070 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+084071 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+084277 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 103507248420537171 14}
+084278 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 3941827352807223435 14}
+084278 RAFT Server 1收到来自raft的msg: {Query {map[] [] 0 0 -1} 60779041232186057 14}
+084281 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+084282 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+084282 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+084282 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+084283 CONFIG Clerk获得的新配置为: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}
+084597 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+084600 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+084602 CONFIG 旧配置中, 当前shard对应gid=100;新配置中, shard对应gid=101
+085074 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4535747635387966427 30}
+085075 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3584042164048480014 30}
+085076 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 1926257313085127527 30}
+085077 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4547304684796505994 30}
+085078 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3415160048607627980 30}
+085078 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 2959616767002964891 30}
+085079 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 3354077241478585144 30}
+085080 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 4447036797468755425 30}
+085081 RAFT Server 0收到来自raft的msg: {Query {map[] [] 0 0 -1} 279441479060339387 30}
+  ... Passed
+PASS
+ok  	6.5840/shardkv	8.524s
