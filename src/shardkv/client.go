@@ -79,20 +79,20 @@ func (ck *Clerk) Get(key string) string {
 			for si := 0; si < len(servers); si++ {
 				srv := ck.make_end(servers[si])
 				var reply GetReply
+				Debug(dClerk, "Clerk %v向Group %v发送Get(%v)", ck.clientId, gid, args)
 				ok := srv.Call("ShardKV.Get", &args, &reply)
-				Debug(dClerk, "Clerk %v向Server %v发送args: %v", ck.clientId, si, args)
+				// Debug(dClerk, "Group %v的处理结果是%v", gid, reply.Err)
 				if ok && (reply.Err == OK || reply.Err == ErrNoKey) {
 					ck.commandIndex++
 					return reply.Value
 				}
 				if ok && (reply.Err == ErrWrongGroup) {
-					Debug(dClerk, "Clerk准备更新配置")
 					break
 				}
 				// ... not ok, or ErrWrongLeader
 			}
 		}
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(1000 * time.Millisecond)
 		// ask controller for the latest configuration.
 		ck.config = ck.sm.Query(-1)
 		Debug(dConfig, "Clerk获得的新配置为: %v", ck.config)
@@ -117,8 +117,9 @@ func (ck *Clerk) PutAppend(key string, value string, op string) {
 			for si := 0; si < len(servers); si++ {
 				srv := ck.make_end(servers[si])
 				var reply PutAppendReply
-				Debug(dClerk, "Clerk %v向Server %v发送args: %v", ck.clientId, si, args)
+				Debug(dClerk, "Clerk %v向Group %v发送%v(%v, %v)", ck.clientId, gid, op, key, value)
 				ok := srv.Call("ShardKV.PutAppend", &args, &reply)
+				// Debug(dClerk, "Group %v的处理结果是%v", gid, reply.Err)
 				if ok && reply.Err == OK {
 					ck.commandIndex++
 					return

@@ -36,7 +36,7 @@ var debugVerbosity int
 
 func init() {
 	// debugVerbosity = getVerbosity()
-	debugVerbosity = 1
+	debugVerbosity = 0
 	debugStart = time.Now()
 
 	log.SetFlags(log.Flags() &^ (log.Ldate | log.Ltime))

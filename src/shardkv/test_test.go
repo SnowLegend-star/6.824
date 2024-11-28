@@ -1,15 +1,18 @@
 package shardkv
 
-import "6.5840/porcupine"
-import "6.5840/models"
-import "testing"
-import "strconv"
-import "time"
-import "fmt"
-import "sync/atomic"
-import "sync"
-import "math/rand"
-import "io/ioutil"
+import (
+	"fmt"
+	"io/ioutil"
+	"math/rand"
+	"strconv"
+	"sync"
+	"sync/atomic"
+	"testing"
+	"time"
+
+	"6.5840/models"
+	"6.5840/porcupine"
+)
 
 const linearizabilityCheckTimeout = 1 * time.Second
 
@@ -195,9 +198,9 @@ func TestJoinLeave5B(t *testing.T) {
 	for i := 0; i < n; i++ {
 		check(t, ck, ka[i], va[i])
 	}
-
+	Debug(DTest, "通过了第一次的check测试")
 	cfg.join(1)
-
+	Debug(DTest, "Group 1加入集群")
 	for i := 0; i < n; i++ {
 		check(t, ck, ka[i], va[i])
 		x := randstring(5)
@@ -206,7 +209,7 @@ func TestJoinLeave5B(t *testing.T) {
 	}
 
 	cfg.leave(0)
-
+	Debug(DTest, "Group 0离开集群")
 	for i := 0; i < n; i++ {
 		check(t, ck, ka[i], va[i])
 		x := randstring(5)
@@ -248,11 +251,13 @@ func TestSnapshot5B(t *testing.T) {
 	for i := 0; i < n; i++ {
 		check(t, ck, ka[i], va[i])
 	}
-
+	Debug(DTest, "通过了第一次的check测试")
 	cfg.join(1)
+	Debug(DTest, "Group 1加入集群")
 	cfg.join(2)
+	Debug(DTest, "Group 2加入集群")
 	cfg.leave(0)
-
+	Debug(DTest, "Group 0离开集群")
 	for i := 0; i < n; i++ {
 		check(t, ck, ka[i], va[i])
 		x := randstring(20)
@@ -261,8 +266,9 @@ func TestSnapshot5B(t *testing.T) {
 	}
 
 	cfg.leave(1)
+	Debug(DTest, "Group 1离开集群")
 	cfg.join(0)
-
+	Debug(DTest, "Group 0加入集群")
 	for i := 0; i < n; i++ {
 		check(t, ck, ka[i], va[i])
 		x := randstring(20)
@@ -275,7 +281,7 @@ func TestSnapshot5B(t *testing.T) {
 	for i := 0; i < n; i++ {
 		check(t, ck, ka[i], va[i])
 	}
-
+	Debug(DTest, "通过了第二次的check测试")
 	time.Sleep(1 * time.Second)
 
 	cfg.checklogs()
@@ -283,11 +289,11 @@ func TestSnapshot5B(t *testing.T) {
 	cfg.ShutdownGroup(0)
 	cfg.ShutdownGroup(1)
 	cfg.ShutdownGroup(2)
-
+	Debug(DTest, "关闭三组group")
 	cfg.StartGroup(0)
 	cfg.StartGroup(1)
 	cfg.StartGroup(2)
-
+	Debug(DTest, "重启三组group")
 	for i := 0; i < n; i++ {
 		check(t, ck, ka[i], va[i])
 	}

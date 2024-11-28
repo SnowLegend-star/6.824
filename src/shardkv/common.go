@@ -10,14 +10,19 @@ package shardkv
 //
 
 const (
-	OK             = "OK"
-	ErrNoKey       = "ErrNoKey"
-	ErrWrongGroup  = "ErrWrongGroup"
-	ErrWrongLeader = "ErrWrongLeader"
-	ErrTimeout     = "ErrTimeout"
+	OK               = "OK"
+	ErrNoKey         = "ErrNoKey"
+	ErrWrongGroup    = "ErrWrongGroup"
+	ErrWrongLeader   = "ErrWrongLeader"
+	ErrTimeout       = "ErrTimeout"
+	ErrOldConfigSend = "ErrOldConfigSend"
+	ErrOldConfigRecv = "ErrOldConfigRecv"
 )
 
 type Err string
+
+// The number of shards.
+const NShards = 10
 
 // Put or Append
 type PutAppendArgs struct {
@@ -46,4 +51,14 @@ type GetArgs struct {
 type GetReply struct {
 	Err   Err
 	Value string
+}
+
+type MoveShardDataArgs struct {
+	KvData    KVStorage
+	ShardId   int
+	ConfigNum int
+}
+
+type MoveShardDataReply struct {
+	Err Err
 }
