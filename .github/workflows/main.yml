@@ -19,7 +19,7 @@ jobs:
     - name: Generate GitHub Snake
       uses: Platane/snk@v3
       with:
-        github_user_name: ${{ github.SnowLegend-star }}  # 使用仓库拥有者的 GitHub 用户名
+        github_user_name: SnowLegend-star  # 使用仓库拥有者的 GitHub 用户名
         outputs: |
           dist/github-snake.svg
           dist/github-snake-dark.svg?palette=github-dark
